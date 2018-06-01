@@ -57,6 +57,8 @@ public class inicio extends javax.swing.JFrame {
             }
         });
 
+        barraP.setForeground(new java.awt.Color(0, 153, 153));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proyecto3/interfaz/Imagenes/JarAnlyzer.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
