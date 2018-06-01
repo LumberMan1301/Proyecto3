@@ -5,6 +5,10 @@
  */
 package proyecto3;
 
+import proyecto3.interfaz.PantallaInicio.inicio;
+
+
+
 /**
  *
  * @author 13mariano
@@ -15,7 +19,9 @@ public class Proyecto3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Aqui empieza todo");
+       
+        inicio inicio = new inicio();
+        inicio.setVisible(true);
     }
     
 }
