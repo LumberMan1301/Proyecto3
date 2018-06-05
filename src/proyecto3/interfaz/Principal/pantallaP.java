@@ -5,11 +5,25 @@
  */
 package proyecto3.interfaz.Principal;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.jar.JarInputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+import javafx.stage.FileChooser;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 /**
  *
  * @author 13mariano
  */
 public class pantallaP extends javax.swing.JFrame {
+    
+    private FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivos JAR","jar");
 
     /**
      * Creates new form Interfaz
@@ -132,7 +146,26 @@ public class pantallaP extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        System.out.println("Deberia abrir proyectos");
+        
+        JFileChooser fc = new JFileChooser();
+        fc.setFileFilter(filtro); 
+        int opcion = fc.showOpenDialog(this);
+        if (opcion == JFileChooser.APPROVE_OPTION){
+            System.out.println(fc.getSelectedFile().getPath());
+            System.out.println(fc.getSelectedFile().getName());
+            String path = fc.getSelectedFile().getPath();
+            try {
+                ZipInputStream je = new ZipInputStream(new FileInputStream(fc.getSelectedFile().getPath()));
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(pantallaP.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            ZipEntry entrada;
+                while (null != (entrada=je.getNextEntry()) ){
+                   System.out.println(entrada.getName());
+
+            }
+            
+        }
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
