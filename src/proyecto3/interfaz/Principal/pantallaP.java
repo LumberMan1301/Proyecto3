@@ -159,11 +159,7 @@ public class pantallaP extends javax.swing.JFrame {
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(pantallaP.class.getName()).log(Level.SEVERE, null, ex);
             }
-            ZipEntry entrada;
-                while (null != (entrada=je.getNextEntry()) ){
-                   System.out.println(entrada.getName());
-
-            }
+            
             
         }
     }//GEN-LAST:event_jMenuItem3ActionPerformed
