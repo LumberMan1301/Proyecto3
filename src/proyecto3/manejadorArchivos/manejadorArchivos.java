@@ -5,10 +5,16 @@
  */
 package proyecto3.manejadorArchivos;
 
+import java.io.File;
+import java.util.jar.JarFile;
+import proyecto3.interfaz.Principal.pantallaP;
+
 /**
  *
  * @author 13mariano
  */
 public class manejadorArchivos {
+    
+    File jarCargado = new File(pantallaP.getRuta());
     
 }
