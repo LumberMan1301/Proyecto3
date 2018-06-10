@@ -8,6 +8,8 @@ package proyecto3.interfaz.Principal;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.jar.JarFile;
 import java.util.jar.JarInputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,6 +29,7 @@ import proyecto3.grafos.Arboles;
 public class pantallaP extends javax.swing.JFrame {
     
     private FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivos JAR","jar");
+<<<<<<< HEAD
     private int tope=0;// lleva el # de nodos creado 
     private int nodoFin;
     private int permanente;
@@ -46,6 +49,13 @@ public class pantallaP extends javax.swing.JFrame {
             Pintar.pintarCirculo(jPanel1.getGraphics(), arboles.getCordeX(j),arboles.getCordeY(j),String.valueOf(arboles.getNombre(j)));
                 
    }
+=======
+    private static String ruta;
+    
+    public static String getRuta(){
+        return ruta;
+    }
+>>>>>>> 2d06b690a390435ca763d025db06198725bb93f0
 
     /**
      * Creates new form Interfaz
@@ -71,6 +81,7 @@ public class pantallaP extends javax.swing.JFrame {
         menu4 = new java.awt.Menu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
+<<<<<<< HEAD
         jFrame1 = new javax.swing.JFrame();
         jFrame2 = new javax.swing.JFrame();
         jFrame3 = new javax.swing.JFrame();
@@ -79,6 +90,13 @@ public class pantallaP extends javax.swing.JFrame {
         jTree1 = new javax.swing.JTree();
         jButton1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+=======
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txtNombre = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtRuta = new javax.swing.JTextField();
+>>>>>>> 2d06b690a390435ca763d025db06198725bb93f0
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -155,7 +173,52 @@ public class pantallaP extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1200, 700));
         setResizable(false);
 
-        jScrollPane1.setViewportView(jTree1);
+        jLabel1.setText("Nombre:");
+
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Ruta:");
+
+        txtRuta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRutaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addGap(28, 28, 28)
+                .addComponent(txtRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(549, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(txtRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        txtNombre.getAccessibleContext().setAccessibleName("txtNombre");
+        txtRuta.getAccessibleContext().setAccessibleName("txtRuta");
 
         jButton1.setText("Mostrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -221,6 +284,7 @@ public class pantallaP extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -233,10 +297,14 @@ public class pantallaP extends javax.swing.JFrame {
                         .addGap(18, 18, 18)))
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(174, 174, 174))
+=======
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+>>>>>>> 2d06b690a390435ca763d025db06198725bb93f0
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+<<<<<<< HEAD
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -245,6 +313,10 @@ public class pantallaP extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(91, Short.MAX_VALUE))
+=======
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 637, Short.MAX_VALUE))
+>>>>>>> 2d06b690a390435ca763d025db06198725bb93f0
         );
 
         getAccessibleContext().setAccessibleName("JFramePrincipal");
@@ -258,14 +330,19 @@ public class pantallaP extends javax.swing.JFrame {
         fc.setFileFilter(filtro); 
         int opcion = fc.showOpenDialog(this);
         if (opcion == JFileChooser.APPROVE_OPTION){
-            System.out.println(fc.getSelectedFile().getPath());
-            System.out.println(fc.getSelectedFile().getName());
-            String path = fc.getSelectedFile().getPath();
-            try {
-                ZipInputStream je = new ZipInputStream(new FileInputStream(fc.getSelectedFile().getPath()));
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(pantallaP.class.getName()).log(Level.SEVERE, null, ex);
-            }
+           
+            ruta = fc.getSelectedFile().getPath();
+            File jarCargado = new File(ruta);
+            System.out.println(jarCargado.exists());
+            
+            txtNombre.setText(fc.getSelectedFile().getName());
+            txtRuta.setText(fc.getSelectedFile().getPath());
+            
+            System.out.println(fc.getSelectedFile().getClass());
+            
+           
+            
+            
             
             
         }
@@ -278,6 +355,7 @@ public class pantallaP extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
+<<<<<<< HEAD
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jPanel1.paint(jPanel1.getGraphics()); 
          n=0;
@@ -323,15 +401,29 @@ public class pantallaP extends javax.swing.JFrame {
         R_repaint(tope,arboles);
     
     }//GEN-LAST:event_jButton1ActionPerformed
+=======
+    private void txtRutaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRutaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRutaActionPerformed
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
+>>>>>>> 2d06b690a390435ca763d025db06198725bb93f0
 
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+<<<<<<< HEAD
     private javax.swing.JButton jButton1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JFrame jFrame3;
     private javax.swing.JFrame jFrame4;
+=======
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+>>>>>>> 2d06b690a390435ca763d025db06198725bb93f0
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -344,13 +436,18 @@ public class pantallaP extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
+<<<<<<< HEAD
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTree jTree1;
+=======
+>>>>>>> 2d06b690a390435ca763d025db06198725bb93f0
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.Menu menu3;
     private java.awt.Menu menu4;
     private java.awt.MenuBar menuBar1;
     private java.awt.MenuBar menuBar2;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtRuta;
     // End of variables declaration//GEN-END:variables
 }
