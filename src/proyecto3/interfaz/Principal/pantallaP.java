@@ -19,6 +19,9 @@ import javafx.stage.FileChooser;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import proyecto3.grafos.Arboles;
+import proyecto3.grafos.Pintar;
+
 /**
  *
  * @author 13mariano
@@ -27,6 +30,12 @@ public class pantallaP extends javax.swing.JFrame {
     
     private FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivos JAR","jar");
     private static String ruta;
+    
+    private int tope=0;// lleva el # de nodos creado 
+    private int nodoFin;
+    private int permanente;
+    int n=0,nn=0,id,id2;// permite controlar que se halla dado click sobre un nodo
+    private int aristaMayor;
     
     public static String getRuta(){
         return ruta;
@@ -38,6 +47,20 @@ public class pantallaP extends javax.swing.JFrame {
     public pantallaP() {
         initComponents();
     }
+    
+    Pintar pintar =new Pintar();
+    Arboles arboles = new Arboles();    
+    public static void R_repaint(int tope, Arboles arboles){//pinta lo q esta antes en el panel 
+        for (int j = 0; j < tope; j++) {
+            for (int k = 0; k < tope; k++) {
+                if(arboles.getmAdyacencia(j, k) == 1)
+                     Pintar.pintarLinea(jPanel1.getGraphics(),arboles.getCordeX(j),arboles.getCordeY(j), arboles.getCordeX(k), arboles.getCordeY(k),arboles.getmCoeficiente(j, k));
+            }
+        }
+        for (int j = 0; j < tope; j++) 
+            Pintar.pintarCirculo(jPanel1.getGraphics(), arboles.getCordeX(j),arboles.getCordeY(j),String.valueOf(arboles.getNombre(j)));
+                
+   }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -61,6 +84,8 @@ public class pantallaP extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtRuta = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -122,23 +147,45 @@ public class pantallaP extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(28, 28, 28)
                 .addComponent(txtRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(549, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
-                        .addComponent(txtRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         txtNombre.getAccessibleContext().setAccessibleName("txtNombre");
         txtRuta.getAccessibleContext().setAccessibleName("txtRuta");
+
+        jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
+        jPanel2.setForeground(new java.awt.Color(204, 51, 255));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 612, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 542, Short.MAX_VALUE)
+        );
+
+        jButton1.setText("MOSTRAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jMenu2.setText("File");
 
@@ -185,12 +232,25 @@ public class pantallaP extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 637, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 85, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleName("JFramePrincipal");
@@ -237,9 +297,56 @@ public class pantallaP extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        jPanel1.paint(jPanel1.getGraphics()); 
+         n=0;
+         id=-1;
+         id2=-1;
+        int Matriz[][]=
+                {{0,0,0,1,1,0,0,1},
+                {0,0,1,0,0,0,0,0},
+                {0,1,0,1,1,0,0,0},
+                {1,0,1,0,0,0,0,0},
+                {1,0,1,0,0,1,0,0},
+                {0,0,0,0,1,0,1,1},
+                {0,0,0,0,0,1,0,0},
+                {1,0,0,0,0,1,0,0}
+                   };
+        int coe[][]=  
+                {{0,0,0,46,216,0,0,578}, 
+                {0,0,59,0,0,0,0,0}, 
+                {0,59,0,89,174,0,0,0},
+                {46,0,89,0,0,0,0,0},
+                {216,0,174,0,0,471,0,0} ,
+                {0,0,0,0,471,0,194,398},  
+                {0,0,0,0,0,194,0,0}, 
+                {578,0,0,0,0,398,0,0},};
+          
+        int xx1[]={202,102,8,198,248,352,481,416};
+        int yy1[]={12,74,165,113,233,300,368,177};
+        int nom[]={0,1,2,3,4,5,6,7};          
+        aristaMayor=600;       
+        for (int j = 0; j < 8; j++) {
+            arboles.setCordeX(j, xx1[j]);
+            arboles.setCordeY(j, yy1[j]);
+            arboles.setNombre(j, nom[j]);      
+         
+        }
+        for (int j = 0; j < 8; j++) {            
+            for (int k = 0; k < 8; k++) {
+                arboles.setmAdyacencia(j,k, Matriz[j][k]);
+                arboles.setmCoeficiente(j, k, coe[j][k]); 
+            }
+        }        
+       tope=8;       
+        R_repaint(tope,arboles);
+                             
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
@@ -254,6 +361,7 @@ public class pantallaP extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.Menu menu3;
