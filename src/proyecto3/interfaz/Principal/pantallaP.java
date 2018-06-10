@@ -54,11 +54,11 @@ public class pantallaP extends javax.swing.JFrame {
         for (int j = 0; j < tope; j++) {
             for (int k = 0; k < tope; k++) {
                 if(arboles.getmAdyacencia(j, k) == 1)
-                     Pintar.pintarLinea(jPanel1.getGraphics(),arboles.getCordeX(j),arboles.getCordeY(j), arboles.getCordeX(k), arboles.getCordeY(k),arboles.getmCoeficiente(j, k));
+                     Pintar.pintarLinea(jPanel2.getGraphics(),arboles.getCordeX(j),arboles.getCordeY(j), arboles.getCordeX(k), arboles.getCordeY(k),arboles.getmCoeficiente(j, k));
             }
         }
         for (int j = 0; j < tope; j++) 
-            Pintar.pintarCirculo(jPanel1.getGraphics(), arboles.getCordeX(j),arboles.getCordeY(j),String.valueOf(arboles.getNombre(j)));
+            Pintar.pintarCirculo(jPanel2.getGraphics(), arboles.getCordeX(j),arboles.getCordeY(j),String.valueOf(arboles.getNombre(j)));
                 
    }
 
@@ -298,7 +298,7 @@ public class pantallaP extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jPanel1.paint(jPanel1.getGraphics()); 
+        jPanel2.paint(jPanel2.getGraphics()); 
          n=0;
          id=-1;
          id2=-1;
@@ -346,7 +346,7 @@ public class pantallaP extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public static javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
@@ -361,7 +361,7 @@ public class pantallaP extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    public static javax.swing.JPanel jPanel2;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.Menu menu3;
