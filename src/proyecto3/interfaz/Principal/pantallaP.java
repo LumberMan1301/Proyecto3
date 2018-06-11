@@ -21,6 +21,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import proyecto3.grafos.Arboles;
 import proyecto3.grafos.Pintar;
+import proyecto3.manejadorArchivos.manejadorArchivos;
 
 /**
  *
@@ -264,16 +265,14 @@ public class pantallaP extends javax.swing.JFrame {
         fc.setFileFilter(filtro); 
         int opcion = fc.showOpenDialog(this);
         if (opcion == JFileChooser.APPROVE_OPTION){
-           
-            ruta = fc.getSelectedFile().getPath();
-            File jarCargado = new File(ruta);
-            System.out.println(jarCargado.exists());
+        ruta = fc.getSelectedFile().getPath();
+        txtNombre.setText(fc.getSelectedFile().getName());
+        txtRuta.setText(fc.getSelectedFile().getPath());
+        
+        manejadorArchivos.leerArchivo(ruta);
+        
             
-            txtNombre.setText(fc.getSelectedFile().getName());
-            txtRuta.setText(fc.getSelectedFile().getPath());
-            
-            System.out.println(fc.getSelectedFile().getClass());
-            
+//            
            
             
             
