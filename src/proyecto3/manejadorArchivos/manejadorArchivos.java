@@ -5,10 +5,8 @@
  */
 package proyecto3.manejadorArchivos;
 
-import java.io.IOException;
-import java.util.jar.JarFile;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.File;
+
 
 /**
  *
@@ -16,12 +14,10 @@ import java.util.logging.Logger;
  */
 public class manejadorArchivos {
     public static void leerArchivo(String ruta){
-        try {
-            JarFile jf = new JarFile(ruta);
-            jf.getManifest();
-        } catch (IOException ex) {
-            Logger.getLogger(manejadorArchivos.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        File jarfile = new File(ruta);
+        File[] ficheros = jarfile.listFiles();
+        System.out.println(ficheros);
+    
     }
     
 }
