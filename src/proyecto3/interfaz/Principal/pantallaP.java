@@ -192,16 +192,17 @@ public class pantallaP extends javax.swing.JFrame {
 
         jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel2.setForeground(new java.awt.Color(204, 51, 255));
+        jPanel2.setDoubleBuffered(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 648, Short.MAX_VALUE)
+            .addGap(0, 714, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 488, Short.MAX_VALUE)
+            .addGap(0, 584, Short.MAX_VALUE)
         );
 
         jLabel3.setText("Directorios de JAr");
@@ -293,9 +294,9 @@ public class pantallaP extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,7 +306,7 @@ public class pantallaP extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
+                        .addGap(15, 15, 15)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
@@ -370,9 +371,10 @@ public class pantallaP extends javax.swing.JFrame {
                 {0,0,0,0,0,194,0,0,0}, 
                 {578,0,0,0,0,398,0,0,0},
                 {0,0,0,0,0,0,0,0,0},};
-          
-        int xx1[]={202,102,8,198,248,352,481,416,500};
-        int yy1[]={12,74,165,113,233,300,368,177,200};
+        int cordx = 70;
+        int cordy = 50;
+        int xx1[]={cordx,cordx += 70,cordx += 70,cordx += 70,cordx += 70,cordx += 70,cordx += 70,cordx += 70,cordx += 70};
+        int yy1[]={cordy,74,165,113,233,300,368,177,200};
         int nom[]={0,1,2,3,4,5,6,7,30};          
         aristaMayor=600;       
         for (int j = 0; j < 9; j++) {
