@@ -7,17 +7,10 @@ package proyecto3.interfaz.Principal;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.jar.JarFile;
-import java.util.jar.JarInputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
-import javafx.stage.FileChooser;
+
+
+
+
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
@@ -41,6 +34,8 @@ public class pantallaP extends javax.swing.JFrame {
     private int permanente;
     int n=0,nn=0,id,id2;// permite controlar que se halla dando click sobre un nodo
     private int aristaMayor;
+    
+    private int h;
     
     public static String getRuta(){
         return ruta;
