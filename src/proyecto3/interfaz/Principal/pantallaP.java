@@ -35,7 +35,7 @@ public class pantallaP extends javax.swing.JFrame {
     private int tope=0;// lleva el # de nodos creado 
     private int nodoFin;
     private int permanente;
-    int n=0,nn=0,id,id2;// permite controlar que se halla dado click sobre un nodo
+    int n=0,nn=0,id,id2;// permite controlar que se halla dando click sobre un nodo
     private int aristaMayor;
     
     public static String getRuta(){
@@ -345,7 +345,7 @@ public class pantallaP extends javax.swing.JFrame {
          id=-1;
          id2=-1;
         int Matriz[][]=
-                {{0,1,0,0,1,0,0,1},
+                {{0,1,0,1,1,0,0,1},
                 {1,0,1,0,0,0,0,0},
                 {0,1,0,1,1,0,0,0},
                 {1,0,1,0,0,0,0,0},
@@ -355,7 +355,7 @@ public class pantallaP extends javax.swing.JFrame {
                 {1,0,0,0,0,1,0,0}
                    };
         int coe[][]=  
-                {{0,50,0,0,216,0,0,578}, 
+                {{0,50,0,46,216,0,0,578}, 
                 {30,0,59,0,0,0,0,0}, 
                 {0,59,0,89,174,0,0,0},
                 {46,0,89,0,0,0,0,0},

@@ -30,15 +30,15 @@ public class Pintar {
    public static void pintarCirculo(Graphics g,int x,int y,String n){
         //g.drawOval(x, y-10, 20, 20);
        ((Graphics2D)g).setColor(Color.white);
-        ((Graphics2D)g).setStroke(new BasicStroke(2));//leda el grosor al circulo        
-        ((Graphics2D)g).fillOval(x, y, 30, 30);        
+        ((Graphics2D)g).setStroke(new BasicStroke(2));//le da el grosor al circulo        
+        ((Graphics2D)g).fillOval(x, y, 35, 35);        
         ((Graphics2D)g).setColor(Color.blue);
-        ((Graphics2D)g).drawOval(x, y, 30, 30);
+        ((Graphics2D)g).drawOval(x, y, 35, 35);
         
-        ((Graphics2D)g).setColor(Color.green);
+        ((Graphics2D)g).setColor(Color.orange);
         Font fuente=new Font("Monospaced",Font.BOLD, 16);
         g.setFont(fuente);
-        ((Graphics2D)g).drawString(n, x, y);
+        ((Graphics2D)g).drawString(n, x+12, y+22);
          
     }    
   
@@ -46,8 +46,9 @@ public class Pintar {
         int xAux = 0; int yAux = 0; 
         ((Graphics2D)g).setRenderingHint(RenderingHints.KEY_ANTIALIASING,  RenderingHints.VALUE_ANTIALIAS_ON);
         BasicStroke stroke = new BasicStroke(2);
-        ((Graphics2D)g).setStroke(stroke);         
-       ((Graphics2D)g).drawLine(x1+10, y1+10, x2+10, y2+10);
+        ((Graphics2D)g).setStroke(stroke);
+        ((Graphics2D)g).setColor(Color.darkGray);
+       ((Graphics2D)g).drawLine(x1+15, y1+15, x2+15, y2+15);
        if(x1<=x2)
            xAux=((x2-x1)/2)+x1;       
         if(x1>x2)
@@ -59,7 +60,7 @@ public class Pintar {
         // ((Graphics2D)g).setColor(Color.black);
         Font fuente=new Font("Monospaced",Font.PLAIN, 12);
         g.setFont(fuente);
-      ((Graphics2D)g).drawString(String.valueOf(tam), xAux, yAux);
+      //((Graphics2D)g).drawString(String.valueOf(tam), xAux, yAux);
       
         Point punto1=null,punto2=null;
         
@@ -77,7 +78,7 @@ public class Pintar {
 
         //tamaño de la punta de la flecha
         dist=30;
-        angSep = 30.0;
+        angSep = 25.0;
 
         
         ty=-(y1-punto2.y)*1.0;
@@ -105,7 +106,7 @@ public class Pintar {
         BasicStroke stroke = new BasicStroke(2);
         ((Graphics2D)g).setStroke(stroke);
         g.setColor(color);
-        g.drawLine(x1+10, y1+10, x2+10, y2+10);
+        g.drawLine(x1+30, y1+30, x2+30, y2+30);
         //g.drawString(String.valueOf(tam), x1, y1);
   }
    public static void clickSobreNodo(Graphics g,int x,int y,String n,Color co){
