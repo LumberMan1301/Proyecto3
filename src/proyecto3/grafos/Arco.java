@@ -6,7 +6,7 @@ public class Arco {
     public Arco() {
         
     }  
-    private Nodo origen;//npdp origen
+    private Nodo origen;//nodo origen
     private Nodo destino;// Nodo destino
     private int peso;// peso del arco
 
