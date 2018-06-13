@@ -5,7 +5,12 @@
  */
 package proyecto3.manejadorArchivos;
 
-import java.io.File;
+
+import java.io.IOException;
+import java.util.jar.JarFile;
+import java.util.jar.Manifest;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -14,9 +19,13 @@ import java.io.File;
  */
 public class manejadorArchivos {
     public static void leerArchivo(String ruta){
-        File jarfile = new File(ruta);
-        File[] ficheros = jarfile.listFiles();
-        System.out.println(ficheros);
+        try {
+            JarFile jf = new JarFile(ruta);//ruta es el path del jar
+            System.out.println(jf.MANIFEST_NAME.toCharArray());
+           
+        } catch (IOException ex) {
+            Logger.getLogger(manejadorArchivos.class.getName()).log(Level.SEVERE, null, ex);
+        }
     
     }
     
