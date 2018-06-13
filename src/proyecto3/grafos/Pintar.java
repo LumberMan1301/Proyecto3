@@ -63,25 +63,37 @@ public class Pintar {
       
         Point punto1=null,punto2=null;
         
+        //p1.x = x1;
+        //p1.y = y1;
+        //p2.x = x2;
+        //p2.y = y2;
         double ang=0.0, angSep=0.0;
         double tx,ty;
         int dist=0;
 
         //defino dos puntos extremos
-        punto1=new Point(p2.x+25,p2.y+25);
-        punto2=new Point(p1.x+15,p1.y+15);
+        punto1=new Point(p2.x+10,p2.y+10);
+        punto2=new Point(p1.x+5,p1.y+5);
 
         //tamaño de la punta de la flecha
-        dist=50;
-        angSep = 25.0;
+        dist=30;
+        angSep = 30.0;
+
+        
+        ty=-(y1-punto2.y)*1.0;
+        tx=(x1-punto2.x)*1.0;
+        //angulo
+        ang=Math.atan (ty/tx);
+
+        if(tx<0)
+        {// si tx es negativo aumentar 180 grados
+           ang+=Math.PI;
+        }
+        
         p1.x=(int)(x2+dist*Math.cos (ang-Math.toRadians (angSep)));
         p1.y=(int)(y2-dist*Math.sin (ang-Math.toRadians (angSep)));
         p2.x=(int)(x2+dist*Math.cos (ang+Math.toRadians (angSep)));
         p2.y=(int)(y2-dist*Math.sin (ang+Math.toRadians (angSep)));
-
-        //defino dos puntos extremos
-        punto1=new Point(p2.x+25,p2.y+25);
-        punto2=new Point(p1.x+15,p1.y+15);
         
         //dibujar la punta
         g.drawLine (p1.x,p1.y,x2,y2);
