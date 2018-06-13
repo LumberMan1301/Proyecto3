@@ -15,12 +15,11 @@ import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.RenderingHints;
 
-/**
- *
- * @author fredy_000
- */
 public class Pintar {   
     Color color;
+    
+    static Point p1 = new Point();
+    static Point p2 = new Point();
      
    
     public Pintar(){
@@ -63,11 +62,32 @@ public class Pintar {
       ((Graphics2D)g).drawString(String.valueOf(tam), xAux, yAux);
       
         Point punto1=null,punto2=null;
+        
+        double ang=0.0, angSep=0.0;
+        double tx,ty;
+        int dist=0;
 
         //defino dos puntos extremos
-        //punto1=new Point(p2.x+25,p2.y+25);
-        //punto2=new Point(p1.x+15,p1.y+15);
-  }   
+        punto1=new Point(p2.x+25,p2.y+25);
+        punto2=new Point(p1.x+15,p1.y+15);
+
+        //tamaño de la punta de la flecha
+        dist=50;
+        angSep = 25.0;
+        p1.x=(int)(x2+dist*Math.cos (ang-Math.toRadians (angSep)));
+        p1.y=(int)(y2-dist*Math.sin (ang-Math.toRadians (angSep)));
+        p2.x=(int)(x2+dist*Math.cos (ang+Math.toRadians (angSep)));
+        p2.y=(int)(y2-dist*Math.sin (ang+Math.toRadians (angSep)));
+
+        //defino dos puntos extremos
+        punto1=new Point(p2.x+25,p2.y+25);
+        punto2=new Point(p1.x+15,p1.y+15);
+        
+        //dibujar la punta
+        g.drawLine (p1.x,p1.y,x2,y2);
+        g.drawLine (p2.x,p2.y,x2,y2);
+  }
+  
   public static void pintarCamino(Graphics g, int x1,int y1,int x2,int y2, Color color){
       ((Graphics2D)g).setRenderingHint(RenderingHints.KEY_ANTIALIASING,  RenderingHints.VALUE_ANTIALIAS_ON);
         BasicStroke stroke = new BasicStroke(2);
@@ -78,7 +98,7 @@ public class Pintar {
   }
    public static void clickSobreNodo(Graphics g,int x,int y,String n,Color co){
         //g.drawOval(x, y-10, 20, 20);
-       ((Graphics2D)g).setColor(co);
+        ((Graphics2D)g).setColor(co);
         ((Graphics2D)g).setStroke(new BasicStroke(4));//leda el grosor al circulo        
         ((Graphics2D)g).fillOval(x, y, 15, 15);        
         ((Graphics2D)g).setColor(Color.BLACK);

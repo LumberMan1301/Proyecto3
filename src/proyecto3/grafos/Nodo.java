@@ -1,24 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package proyecto3.grafos;
 
 import java.awt.Point;
 
-/**
- *
- * @author fredy-18
- */
 public class Nodo {    
    private  int nombre ;
    private boolean visitado ;
    private boolean etiqueta;
-   private int acumulado; // lleva el acoulado de cada nodo
+   private int acumulado; // lleva el acumulado de cada nodo
    private Nodo Predecesor;
-   private Point punto;//localizacion del nodo en el plano
+   private static Point punto;//localizacion del nodo en el plano
 
    
    public Nodo(){
@@ -71,7 +61,6 @@ public class Nodo {
         this.Predecesor = Predecesor;
     }
 
-    
     public Point getPunto() {
         return punto;
     }
