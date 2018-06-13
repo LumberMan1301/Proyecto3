@@ -15,7 +15,6 @@ import java.util.jar.Manifest;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.ZipEntry;
-import java.util.zip.ZipFile;
 import proyecto3.interfaz.Principal.pantallaP;
 
 
@@ -24,19 +23,27 @@ import proyecto3.interfaz.Principal.pantallaP;
  * @author 13mariano
  */
 public class manejadorArchivos {
+    
+    
+    
     public static void leerArchivo(String ruta){
         try {
-            ZipFile jf = new JarFile(ruta);//ruta es el path del jar    
+            JarFile jf = new JarFile(ruta);//ruta es el path del jar    
             System.out.println(jf.getName()); 
+            Manifest manifest = jf.getManifest();
+            Attributes attributes = manifest.getMainAttributes();
+            System.out.println(attributes.getValue("Manifest-Version"));
+            
+            
+            
+            
             Enumeration<? extends ZipEntry> entries = jf.entries();
 
             while(entries.hasMoreElements()){
                 ZipEntry entry = entries.nextElement();
                 if(entry.isDirectory()){
-                    System.out.println("dir  : " + entry.getName());
                     pantallaP.llenarCont("dir  : " + entry.getName()+"\n");
-                } else {
-                    System.out.println("file : " + entry.getName());
+                } else if(entry.getName().endsWith(".class")) {
                     pantallaP.llenarCont1("file : " + entry.getName()+"\n");
                 }
            }

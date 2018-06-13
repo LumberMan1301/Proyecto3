@@ -5,6 +5,8 @@
  */
 package proyecto3.interfaz.Principal;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -29,6 +31,8 @@ import proyecto3.manejadorArchivos.manejadorArchivos;
  */
 public class pantallaP extends javax.swing.JFrame {
     
+    
+    
     private FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivos JAR","jar");
     private static String ruta;
     
@@ -47,6 +51,13 @@ public class pantallaP extends javax.swing.JFrame {
      */
     public pantallaP() {
         initComponents();
+        
+        Toolkit t = Toolkit.getDefaultToolkit();
+        Dimension d = t.getScreenSize();
+        int ScreenWidth = d.width;
+        int ScreenHeight = d.height;
+        this.setSize(ScreenWidth, ScreenHeight);
+        this.setLocationByPlatform(true);
     }
     
     Pintar pintar =new Pintar();
