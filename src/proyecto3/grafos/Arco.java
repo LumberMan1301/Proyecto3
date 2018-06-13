@@ -1,5 +1,5 @@
 
-package proyecto3.EstructurasDeDatos.grafos;
+package proyecto3.grafos;
 
 public class Arco {
     

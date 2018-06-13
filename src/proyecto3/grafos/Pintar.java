@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package proyecto3.EstructurasDeDatos.grafos;
+package proyecto3.grafos;
 
 import java.awt.BasicStroke;
 import java.awt.Color;

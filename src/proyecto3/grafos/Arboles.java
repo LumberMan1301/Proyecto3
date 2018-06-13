@@ -1,5 +1,5 @@
 
-package proyecto3.EstructurasDeDatos.grafos;
+package proyecto3.grafos;
 
 public class Arboles {
    private int mCoeficiente[][] = new int [51][51];

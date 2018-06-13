@@ -1,4 +1,4 @@
-package proyecto3.EstructurasDeDatos.grafos;
+package proyecto3.grafos;
 
 import java.awt.Point;
 

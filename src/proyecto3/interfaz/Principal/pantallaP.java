@@ -14,8 +14,8 @@ import java.awt.Toolkit;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import proyecto3.EstructurasDeDatos.grafos.Arboles;
-import proyecto3.EstructurasDeDatos.grafos.Pintar;
+import proyecto3.grafos.Arboles;
+import proyecto3.grafos.Pintar;
 import proyecto3.manejadorArchivos.manejadorArchivos;
 
 /**
