@@ -64,17 +64,17 @@ public class Pintar {
       
         Point punto1=null,punto2=null;
         
-        //p1.x = x1;
-        //p1.y = y1;
-        //p2.x = x2;
-        //p2.y = y2;
+        p1.x = x2;
+        p1.y = y2;
+        p2.x = x1;
+        p2.y = y1;
         double ang=0.0, angSep=0.0;
         double tx,ty;
         int dist=0;
 
         //defino dos puntos extremos
-        punto1=new Point(p2.x+10,p2.y+10);
-        punto2=new Point(p1.x+5,p1.y+5);
+        punto1=new Point(p2.x,p2.y);
+        punto2=new Point(p1.x,p1.y);
 
         //tamaño de la punta de la flecha
         dist=30;
