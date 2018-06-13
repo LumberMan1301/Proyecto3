@@ -64,10 +64,10 @@ public class Pintar {
       
         Point punto1=null,punto2=null;
         
-        p1.x = x2;
-        p1.y = y2;
-        p2.x = x1;
-        p2.y = y1;
+        p1.x = x2+15;
+        p1.y = y2+15;
+        p2.x = x1+15;
+        p2.y = y1+15;
         double ang=0.0, angSep=0.0;
         double tx,ty;
         int dist=0;
@@ -77,12 +77,13 @@ public class Pintar {
         punto2=new Point(p1.x,p1.y);
 
         //tamaño de la punta de la flecha
-        dist=30;
+        dist=40;
+        Point punto=punto2;
         angSep = 25.0;
 
         
-        ty=-(y1-punto2.y)*1.0;
-        tx=(x1-punto2.x)*1.0;
+        ty=-(punto1.y-punto2.y)*1.0;
+        tx=(punto1.x-punto2.x)*1.0;
         //angulo
         ang=Math.atan (ty/tx);
 
@@ -91,14 +92,14 @@ public class Pintar {
            ang+=Math.PI;
         }
         
-        p1.x=(int)(x2+dist*Math.cos (ang-Math.toRadians (angSep)));
-        p1.y=(int)(y2-dist*Math.sin (ang-Math.toRadians (angSep)));
-        p2.x=(int)(x2+dist*Math.cos (ang+Math.toRadians (angSep)));
-        p2.y=(int)(y2-dist*Math.sin (ang+Math.toRadians (angSep)));
+        p1.x=(int)(punto.x+dist*Math.cos (ang-Math.toRadians (angSep)));
+        p1.y=(int)(punto.y-dist*Math.sin (ang-Math.toRadians (angSep)));
+        p2.x=(int)(punto.x+dist*Math.cos (ang+Math.toRadians (angSep)));
+        p2.y=(int)(punto.y-dist*Math.sin (ang+Math.toRadians (angSep)));
         
         //dibujar la punta
-        g.drawLine (p1.x,p1.y,x2,y2);
-        g.drawLine (p2.x,p2.y,x2,y2);
+        g.drawLine (p1.x,p1.y,x2+15,y2+15);
+        g.drawLine (p2.x,p2.y,x2+15,y2+15);
   }
   
   public static void pintarCamino(Graphics g, int x1,int y1,int x2,int y2, Color color){
