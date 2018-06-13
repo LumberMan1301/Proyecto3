@@ -24,6 +24,9 @@ import proyecto3.interfaz.Principal.pantallaP;
  * @author 13mariano
  */
 public class manejadorArchivos {
+    
+    
+    
     public static void leerArchivo(String ruta){
         try {
             ZipFile jf = new JarFile(ruta);//ruta es el path del jar    
