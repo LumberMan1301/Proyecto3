@@ -102,7 +102,7 @@ public class pantallaP extends javax.swing.JFrame {
         ContJar1 = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        BtnAbrir = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
@@ -249,15 +249,15 @@ public class pantallaP extends javax.swing.JFrame {
 
         jMenu2.setText("File");
 
-        jMenuItem3.setText("Abrir");
-        jMenuItem3.setToolTipText("Ctrl + O");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        BtnAbrir.setText("Abrir");
+        BtnAbrir.setToolTipText("Ctrl + O");
+        BtnAbrir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                abrirBuscadorArchivos(evt);
             }
         });
-        jMenu2.add(jMenuItem3);
-        jMenuItem3.getAccessibleContext().setAccessibleName("abrirArchivo");
+        jMenu2.add(BtnAbrir);
+        BtnAbrir.getAccessibleContext().setAccessibleName("abrirArchivo");
 
         jMenuItem4.setText("Cerrar");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
@@ -316,8 +316,8 @@ public class pantallaP extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        
+    private void abrirBuscadorArchivos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirBuscadorArchivos
+            
         JFileChooser fc = new JFileChooser();
         fc.setFileFilter(filtro); 
         int opcion = fc.showOpenDialog(this);
@@ -329,7 +329,7 @@ public class pantallaP extends javax.swing.JFrame {
         manejadorArchivos.leerArchivo(ruta); 
             
         }
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_abrirBuscadorArchivos
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
        
@@ -397,6 +397,7 @@ public class pantallaP extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem BtnAbrir;
     private static javax.swing.JTextArea ContJar;
     private static javax.swing.JTextArea ContJar1;
     public static javax.swing.JButton jButton1;
@@ -413,7 +414,6 @@ public class pantallaP extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JPanel jPanel2;

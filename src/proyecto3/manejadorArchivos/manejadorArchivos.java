@@ -15,6 +15,7 @@ import java.util.jar.Manifest;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.ZipEntry;
+import proyecto3.EstructurasDeDatos.Lista.ListaSimple;
 import proyecto3.interfaz.Principal.pantallaP;
 
 
@@ -23,6 +24,8 @@ import proyecto3.interfaz.Principal.pantallaP;
  * @author 13mariano
  */
 public class manejadorArchivos {
+    private static String dependencias;
+    ListaSimple<String> imports = new ListaSimple<>();
     
     
     
@@ -32,9 +35,8 @@ public class manejadorArchivos {
             System.out.println(jf.getName()); 
             Manifest manifest = jf.getManifest();
             Attributes attributes = manifest.getMainAttributes();
-            System.out.println(attributes.getValue("Manifest-Version"));
             
-            
+            dependencias = attributes.getValue("Import-Package");
             
             
             Enumeration<? extends ZipEntry> entries = jf.entries();
@@ -47,13 +49,17 @@ public class manejadorArchivos {
                     pantallaP.llenarCont1("file : " + entry.getName()+"\n");
                 }
            }
-           
-        } catch (IOException ex) {
-            Logger.getLogger(manejadorArchivos.class.getName()).log(Level.SEVERE, null, ex);
+            jf.close();  
+        } catch (IOException ex) {}
+    }
+    public static void llenarImports(){
+        if (dependencias != null){
+            for(int i = 0; i<dependencias.length(); i++){
+                if(dependencias.charAt(i) == ){
+                    
+                }
+            }
         }
-        
-        
-    
     }
     
     

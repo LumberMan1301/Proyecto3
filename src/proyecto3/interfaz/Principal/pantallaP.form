@@ -51,7 +51,7 @@
             <Property name="text" type="java.lang.String" value="File"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+            <MenuItem class="javax.swing.JMenuItem" name="BtnAbrir">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Abrir"/>
                 <Property name="toolTipText" type="java.lang.String" value="Ctrl + O"/>
@@ -60,7 +60,7 @@
                 <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="abrirArchivo"/>
               </AccessibilityProperties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="abrirBuscadorArchivos"/>
               </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
