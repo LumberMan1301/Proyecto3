@@ -5,8 +5,7 @@ import java.util.Enumeration;
 import java.util.jar.Attributes;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import java.util.zip.ZipEntry;
 import proyecto3.EstructurasDeDatos.Lista.ListaSimple;
 import proyecto3.interfaz.Principal.pantallaP;
@@ -49,14 +48,17 @@ public class manejadorArchivos {
         } catch (IOException ex) {}
     }
     public static void llenarImports(){
+        String s = ";";
+        char c = s.charAt(0);
+        System.out.println(c);
         if (dependencias != null){
             for(int i = 0; i<dependencias.length(); i++){
-                if(dependencias.charAt(i) == ){
+                
                     
                 }
             }
         }
-    }
+    
     
     
     

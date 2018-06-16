@@ -1,10 +1,5 @@
 package proyecto3.EstructurasDeDatos.Lista;
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 1661a1fe55cc39ec04b61e2418a3ac79edc91ccd
 /**
  * Estructura de datos, lista simple enlazada
  * @param <T> para generics
