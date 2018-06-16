@@ -7,7 +7,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import proyecto3.grafos.Arboles;
 import proyecto3.grafos.Pintar;
 import proyecto3.manejadorArchivos.manejadorArchivos;
-
+import proyecto3.EstructurasDeDatos.Lista.ListaSimple;
 /**
  * 
  */
@@ -23,8 +23,10 @@ public class pantallaP extends javax.swing.JFrame {
     private int permanente;
     int n=0,nn=0,id,id2;// permite controlar que se halla dando click sobre un nodo
     private int aristaMayor;
-    
-    private int h;
+    private static ListaSimple<Integer> coordX;
+    private ListaSimple coordY;
+    private ListaSimple nombres;
+
     
     public static String getRuta(){
         return ruta;
@@ -35,7 +37,7 @@ public class pantallaP extends javax.swing.JFrame {
      */
     public pantallaP() {
         initComponents();
-        
+        coordX = new ListaSimple();
         Toolkit t = Toolkit.getDefaultToolkit();
         Dimension d = t.getScreenSize();
         int ScreenWidth = d.width;
@@ -191,7 +193,7 @@ public class pantallaP extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 584, Short.MAX_VALUE)
+            .addGap(0, 583, Short.MAX_VALUE)
         );
 
         jLabel3.setText("Directorios de JAr");
@@ -295,7 +297,7 @@ public class pantallaP extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+                        .addGap(16, 16, 16)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
@@ -360,14 +362,19 @@ public class pantallaP extends javax.swing.JFrame {
                 {0,0,0,0,0,194,0,0,0}, 
                 {578,0,0,0,0,398,0,0,0},
                 {0,0,0,0,0,0,0,0,0},};
-        int cordx = 70;
-        int cordy = 50;
-        int xx1[]={cordx,cordx += 70,cordx += 70,cordx += 70,cordx += 70,120,cordx += 70,cordx += 70,cordx += 70};
-        int yy1[]={cordy,74,165,113,233,300,368,177,200};
+        int coordx = 80;
+        int coordy = 50;
+        while(coordx<580){
+            
+            coordX.add(coordx);
+            coordx += 120;
+        }
+        ///int xx1[]={coordx,coordx += 120,coordx += 120,coordx += 120,coordx += 120,coordx += 120,coordx += 120,coordx += 120,coordx += 120};
+        int yy1[]={coordy,74,165,113,233,300,368,177,200};
         int nom[]={0,1,2,3,4,5,6,7,30};          
         aristaMayor=600;       
         for (int j = 0; j < 9; j++) {
-            arboles.setCordeX(j, xx1[j]);
+            arboles.setCordeX(j, coordX.get(j));
             arboles.setCordeY(j, yy1[j]);
             arboles.setNombre(j, nom[j]);      
          
