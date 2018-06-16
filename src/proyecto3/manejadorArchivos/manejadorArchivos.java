@@ -7,7 +7,6 @@ import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 
 import java.util.zip.ZipEntry;
-import proyecto3.EstructurasDeDatos.Lista.ListaSimple;
 import proyecto3.interfaz.Principal.pantallaP;
 
 /**
@@ -16,7 +15,8 @@ import proyecto3.interfaz.Principal.pantallaP;
  */
 public class manejadorArchivos {
     private static String dependencias;
-    ListaSimple<String> imports = new ListaSimple<>();
+    private static String[] imports;
+   
     
     
     /**
@@ -27,12 +27,10 @@ public class manejadorArchivos {
     public static void leerArchivo(String ruta){
         try {
             JarFile jf = new JarFile(ruta);//ruta es el path del jar    
-            System.out.println(jf.getName()); 
             Manifest manifest = jf.getManifest();
             Attributes attributes = manifest.getMainAttributes();
             
             dependencias = attributes.getValue("Import-Package");
-            
             
             Enumeration<? extends ZipEntry> entries = jf.entries();
 
@@ -52,10 +50,10 @@ public class manejadorArchivos {
         char c = s.charAt(0);
         System.out.println(c);
         if (dependencias != null){
-            for(int i = 0; i<dependencias.length(); i++){
-                
-                    
-                }
+            imports = dependencias.split(",");
+            for(int i = 0; i < imports.length ; i++){
+                pantallaP.llenarCont2(imports[i]+"\n");
+            }
             }
         }
     
