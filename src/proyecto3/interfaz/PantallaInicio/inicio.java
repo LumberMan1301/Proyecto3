@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyecto3.interfaz.PantallaInicio;
 
 import java.awt.Color;
@@ -11,8 +6,8 @@ import java.util.logging.Logger;
 import proyecto3.interfaz.Principal.pantallaP;
 
 /**
- *
- * @author 13mariano
+ * Clase que muestra una interfaz inicial con
+ * la imagen icono del proyecto
  */
 public class inicio extends javax.swing.JFrame {
     
@@ -47,7 +42,7 @@ public class inicio extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
-        setCursor(new java.awt.Cursor(java.awt.Cursor.WAIT_CURSOR));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setMaximumSize(new java.awt.Dimension(407, 420));
         setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(407, 420));

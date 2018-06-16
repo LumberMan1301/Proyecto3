@@ -1,26 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyecto3.interfaz.Principal;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
-
-
-
-
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
 import proyecto3.grafos.Arboles;
 import proyecto3.grafos.Pintar;
 import proyecto3.manejadorArchivos.manejadorArchivos;
 
 /**
- *
- * @author 13mariano
+ * 
  */
 public class pantallaP extends javax.swing.JFrame {
     
@@ -356,7 +345,7 @@ public class pantallaP extends javax.swing.JFrame {
                 {0,0,0,1,0,0,0,0,0},
                 {0,0,0,0,0,0,0,0,0},
                 {0,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,1,0,0},
                 {0,0,0,0,0,0,0,0,0},
                 {0,0,0,0,0,1,0,0,0},
                 {0,0,0,0,0,0,0,0,0},
@@ -366,14 +355,14 @@ public class pantallaP extends javax.swing.JFrame {
                 {30,0,59,0,0,0,0,0,0}, 
                 {0,59,0,89,174,0,0,0,0},
                 {46,0,89,0,0,0,0,0,0},
-                {216,0,174,0,0,471,0,0,0} ,
+                {216,0,174,0,0,471,1,0,0} ,
                 {0,0,0,0,471,0,194,398,0},  
                 {0,0,0,0,0,194,0,0,0}, 
                 {578,0,0,0,0,398,0,0,0},
                 {0,0,0,0,0,0,0,0,0},};
         int cordx = 70;
         int cordy = 50;
-        int xx1[]={cordx,cordx += 70,cordx += 70,cordx += 70,cordx += 70,cordx += 70,cordx += 70,cordx += 70,cordx += 70};
+        int xx1[]={cordx,cordx += 70,cordx += 70,cordx += 70,cordx += 70,120,cordx += 70,cordx += 70,cordx += 70};
         int yy1[]={cordy,74,165,113,233,300,368,177,200};
         int nom[]={0,1,2,3,4,5,6,7,30};          
         aristaMayor=600;       

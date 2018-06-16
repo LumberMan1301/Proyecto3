@@ -1,11 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyecto3.manejadorArchivos;
-
-
 
 import java.io.IOException;
 import java.util.Enumeration;
@@ -18,17 +11,20 @@ import java.util.zip.ZipEntry;
 import proyecto3.EstructurasDeDatos.Lista.ListaSimple;
 import proyecto3.interfaz.Principal.pantallaP;
 
-
 /**
- *
- * @author 13mariano
+ * Pemite acceder a los archivos jar y a 
+ * los valores dentro de el que necesitamos
  */
 public class manejadorArchivos {
     private static String dependencias;
     ListaSimple<String> imports = new ListaSimple<>();
     
     
-    
+    /**
+    * Permite leer el rchivo jar en la ruta escogida en
+    * archivos, toma los atributos que se seleccionan para
+    * saber cuales son las clases y dependencias y manipularlos
+    */
     public static void leerArchivo(String ruta){
         try {
             JarFile jf = new JarFile(ruta);//ruta es el path del jar    

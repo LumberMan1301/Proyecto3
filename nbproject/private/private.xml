@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/maria/Desktop/Proyecto3/src/proyecto3/interfaz/Principal/pantallaP.java</file>
             <file>file:/C:/Users/maria/Desktop/Proyecto3/src/proyecto3/interfaz/PantallaInicio/inicio.java</file>
             <file>file:/C:/Users/maria/Desktop/Proyecto3/src/proyecto3/grafos/Arco.java</file>
@@ -11,6 +12,19 @@
             <file>file:/C:/Users/maria/Desktop/Proyecto3/src/proyecto3/grafos/Arboles.java</file>
             <file>file:/C:/Users/maria/Desktop/Proyecto3/src/proyecto3/EstructurasDeDatos/Lista/NodeLista.java</file>
             <file>file:/C:/Users/maria/Desktop/Proyecto3/src/proyecto3/Proyecto3.java</file>
+=======
+            <file>file:/C:/Users/karla/Documents/NetBeansProjects/Proyecto3/src/proyecto3/EstructurasDeDatos/Lista/ListaSimple.java</file>
+            <file>file:/C:/Users/karla/Documents/NetBeansProjects/Proyecto3/src/proyecto3/manejadorArchivos/manejadorArchivos.java</file>
+            <file>file:/C:/Users/karla/Documents/NetBeansProjects/Proyecto3/src/proyecto3/interfaz/Principal/pantallaP.java</file>
+            <file>file:/C:/Users/karla/Documents/NetBeansProjects/Proyecto3/src/proyecto3/EstructurasDeDatos/fsdfads.java</file>
+            <file>file:/C:/Users/karla/Documents/NetBeansProjects/Proyecto3/src/proyecto3/grafos/Nodo.java</file>
+            <file>file:/C:/Users/karla/Documents/NetBeansProjects/Proyecto3/src/proyecto3/interfaz/PantallaInicio/inicio.java</file>
+            <file>file:/C:/Users/karla/Documents/NetBeansProjects/Proyecto3/src/proyecto3/Proyecto3.java</file>
+            <file>file:/C:/Users/karla/Documents/NetBeansProjects/Proyecto3/src/proyecto3/grafos/Arco.java</file>
+            <file>file:/C:/Users/karla/Documents/NetBeansProjects/Proyecto3/src/proyecto3/grafos/Pintar.java</file>
+            <file>file:/C:/Users/karla/Documents/NetBeansProjects/Proyecto3/src/proyecto3/EstructurasDeDatos/Lista/NodeLista.java</file>
+            <file>file:/C:/Users/karla/Documents/NetBeansProjects/Proyecto3/src/proyecto3/grafos/Arboles.java</file>
+>>>>>>> 1661a1fe55cc39ec04b61e2418a3ac79edc91ccd
         </group>
     </open-files>
 </project-private>

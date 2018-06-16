@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package proyecto3.grafos;
 
 import java.awt.BasicStroke;
@@ -14,6 +8,11 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.RenderingHints;
+
+/**
+ * Clase para dibujar en el plano los nodos, aristas o arcos
+ * y para señalar cuando un quiere ser accedido
+ */
 
 public class Pintar {   
     Color color;
@@ -26,7 +25,10 @@ public class Pintar {
         
         
     }
-    
+  /**
+ * Permite dibujar en el plano un circulo que representa al nodo del
+ * grafo, asi como su identificador 
+ */  
    public static void pintarCirculo(Graphics g,int x,int y,String n){
         //g.drawOval(x, y-10, 20, 20);
        ((Graphics2D)g).setColor(Color.white);
@@ -41,7 +43,12 @@ public class Pintar {
         ((Graphics2D)g).drawString(n, x+12, y+22);
          
     }    
-  
+  /**
+ * Permite dibujar la linea que une a los nodos y representa la 
+ * arista y como el grafo es dirigido, se dibuja una flecha
+ * en el nodo de destino mediante un angulo que separa dos lineas mas
+ * pequeñas formando una flecha
+ */
   public static void pintarLinea(Graphics g, int x1,int y1,int x2,int y2,int tam){
         int xAux = 0; int yAux = 0; 
         ((Graphics2D)g).setRenderingHint(RenderingHints.KEY_ANTIALIASING,  RenderingHints.VALUE_ANTIALIAS_ON);
@@ -101,7 +108,10 @@ public class Pintar {
         g.drawLine (p1.x,p1.y,x2+15,y2+15);
         g.drawLine (p2.x,p2.y,x2+15,y2+15);
   }
-  
+  /**
+ * Pinta la arista entre dos nodos a indicar, y el color
+ * para señalar el camino que existe entre ambos
+ */
   public static void pintarCamino(Graphics g, int x1,int y1,int x2,int y2, Color color){
       ((Graphics2D)g).setRenderingHint(RenderingHints.KEY_ANTIALIASING,  RenderingHints.VALUE_ANTIALIAS_ON);
         BasicStroke stroke = new BasicStroke(2);
@@ -110,6 +120,10 @@ public class Pintar {
         g.drawLine(x1+30, y1+30, x2+30, y2+30);
         //g.drawString(String.valueOf(tam), x1, y1);
   }
+  /**
+ * Pinta el nodo de un color diferente para indicar que se esta
+ * seleccionando ese nodo en especifico y hacer una accion en el
+ */
    public static void clickSobreNodo(Graphics g,int x,int y,String n,Color co){
         //g.drawOval(x, y-10, 20, 20);
         ((Graphics2D)g).setColor(co);
