@@ -1,6 +1,10 @@
 
 package proyecto3.grafos;
-
+/**
+ * Permite obtener y editar los valores y estructuras necesarias
+ * para la creacion de grafos, como su matriz y los puntos 
+ * donde se ubica el grafo
+ */
 public class Arboles {
    private int mCoeficiente[][] = new int [51][51];
    private int mAdyacencia [][] = new int [51][51];

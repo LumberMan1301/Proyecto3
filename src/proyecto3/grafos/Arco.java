@@ -1,6 +1,9 @@
 
 package proyecto3.grafos;
-
+/**
+ * Conexion entre cada nodo o arista del grafo
+ * permite determinar la direccion del grafo dirigido
+ */
 public class Arco {
     
     public Arco() {

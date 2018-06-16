@@ -1,17 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyecto3;
 
 import proyecto3.interfaz.PantallaInicio.inicio;
-
-
-
 /**
- *
- * @author 13mariano
+ * Clase Main principal que inicializa
+ * todas las pantallas y el proyecto
  */
 public class Proyecto3 {
 

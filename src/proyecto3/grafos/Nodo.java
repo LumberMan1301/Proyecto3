@@ -1,7 +1,11 @@
 package proyecto3.grafos;
 
 import java.awt.Point;
-
+/**
+ * Clase para crear nodos del grafo, 
+ * en esta clase se define el nombre, el acumulado y la 
+ * localizacion en el plano de coordenadas
+ */
 public class Nodo {    
    private  int nombre ;
    private boolean visitado ;
