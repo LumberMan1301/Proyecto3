@@ -1,4 +1,4 @@
-    package proyecto3.EstructurasDeDatos.Lista;
+package proyecto3.EstructurasDeDatos.Lista;
 
 public class NodeLista<T> {
     private NodeLista<T> next;

@@ -5,8 +5,7 @@ import java.util.Enumeration;
 import java.util.jar.Attributes;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import java.util.zip.ZipEntry;
 import proyecto3.interfaz.Principal.pantallaP;
 
@@ -15,6 +14,9 @@ import proyecto3.interfaz.Principal.pantallaP;
  * los valores dentro de el que necesitamos
  */
 public class manejadorArchivos {
+    private static String dependencias;
+    private static String[] imports;
+   
     
     
     /**
@@ -25,13 +27,10 @@ public class manejadorArchivos {
     public static void leerArchivo(String ruta){
         try {
             JarFile jf = new JarFile(ruta);//ruta es el path del jar    
-            System.out.println(jf.getName()); 
             Manifest manifest = jf.getManifest();
             Attributes attributes = manifest.getMainAttributes();
-            System.out.println(attributes.getValue("Manifest-Version"));
             
-            
-            
+            dependencias = attributes.getValue("Import-Package");
             
             Enumeration<? extends ZipEntry> entries = jf.entries();
 
@@ -43,14 +42,21 @@ public class manejadorArchivos {
                     pantallaP.llenarCont1("file : " + entry.getName()+"\n");
                 }
            }
-           
-        } catch (IOException ex) {
-            Logger.getLogger(manejadorArchivos.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
-    
+            jf.close();  
+        } catch (IOException ex) {}
     }
+    public static void llenarImports(){
+        String s = ";";
+        char c = s.charAt(0);
+        System.out.println(c);
+        if (dependencias != null){
+            imports = dependencias.split(",");
+            for(int i = 0; i < imports.length ; i++){
+                pantallaP.llenarCont2(imports[i]+"\n");
+            }
+            }
+        }
+    
     
     
     
