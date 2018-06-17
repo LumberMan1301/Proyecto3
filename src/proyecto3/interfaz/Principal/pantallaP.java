@@ -44,6 +44,7 @@ public class pantallaP extends javax.swing.JFrame {
         int ScreenHeight = d.height;
         this.setSize(ScreenWidth, ScreenHeight);
         this.setLocationByPlatform(true);
+        this.setLocationRelativeTo(this);
     }
     
     Pintar pintar =new Pintar();
