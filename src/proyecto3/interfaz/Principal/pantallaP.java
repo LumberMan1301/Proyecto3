@@ -38,6 +38,7 @@ public class pantallaP extends javax.swing.JFrame {
     public pantallaP() {
         initComponents();
         coordX = new ListaSimple();
+        coordY = new ListaSimple();
         Toolkit t = Toolkit.getDefaultToolkit();
         Dimension d = t.getScreenSize();
         int ScreenWidth = d.width;
@@ -386,25 +387,32 @@ public class pantallaP extends javax.swing.JFrame {
                 {0,0,0,0,0,194,0,0,0}, 
                 {578,0,0,0,0,398,0,0,0},
                 {0,0,0,0,0,0,0,0,0},};
-        int coordx = 80;
+        
         int coordy = 50;
-        while(coordx<580){
-            
-            coordX.add(coordx);
-            coordx += 120;
+        int coordx = 80;
+        for(int y = 1; y < 5; y ++ ){
+            for(int x = 0; x< 5; x++){
+                coordX.add(coordx);
+                coordx += 120;
+            }
+            coordx = 80;
+            coordY.add(coordy);
+            coordy += 110;
         }
         ///int xx1[]={coordx,coordx += 120,coordx += 120,coordx += 120,coordx += 120,coordx += 120,coordx += 120,coordx += 120,coordx += 120};
         int yy1[]={coordy,74,165,113,233,300,368,177,200};
         int nom[]={0,1,2,3,4,5,6,7,30};          
         aristaMayor=600;       
-        for (int j = 0; j < 9; j++) {
-            arboles.setCordeX(j, coordX.get(j));
-            arboles.setCordeY(j, yy1[j]);
+        for (int j = 0; j < 8; j++) {
+            System.out.println((int)coordX.get(j));
+            arboles.setCordeX(j, (int)coordX.get(j));
+            
+            arboles.setCordeY(j, (int)coordY.get(j));
             arboles.setNombre(j, nom[j]);      
          
         }
-        for (int j = 0; j < 9; j++) {            
-            for (int k = 0; k < 9; k++) {
+        for (int j = 0; j < 8; j++) {            
+            for (int k = 0; k < 8; k++) {
                 arboles.setmAdyacencia(j,k, Matriz[j][k]);
                 arboles.setmCoeficiente(j, k, coe[j][k]); 
             }
