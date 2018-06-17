@@ -7,6 +7,7 @@ import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 
 import java.util.zip.ZipEntry;
+import proyecto3.EstructurasDeDatos.Lista.ListaSimple;
 import proyecto3.interfaz.Principal.pantallaP;
 
 /**
@@ -16,6 +17,9 @@ import proyecto3.interfaz.Principal.pantallaP;
 public class manejadorArchivos {
     private static String dependencias;
     private static String[] imports;
+    private static ListaSimple clases;
+    
+    
    
     
     
@@ -25,6 +29,7 @@ public class manejadorArchivos {
     * saber cuales son las clases y dependencias y manipularlos
     */
     public static void leerArchivo(String ruta){
+        clases = new ListaSimple();
         try {
             JarFile jf = new JarFile(ruta);//ruta es el path del jar    
             Manifest manifest = jf.getManifest();
@@ -40,6 +45,7 @@ public class manejadorArchivos {
                     pantallaP.llenarCont("dir  : " + entry.getName()+"\n");
                 } else if(entry.getName().endsWith(".class")) {
                     pantallaP.llenarCont1("file : " + entry.getName()+"\n");
+                    clases.add(entry.getName());
                 }
            }
             jf.close();  
@@ -48,7 +54,6 @@ public class manejadorArchivos {
     public static void llenarImports(){
         String s = ";";
         char c = s.charAt(0);
-        System.out.println(c);
         if (dependencias != null){
             imports = dependencias.split(",");
             for(int i = 0; i < imports.length ; i++){

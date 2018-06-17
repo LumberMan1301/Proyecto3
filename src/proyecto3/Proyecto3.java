@@ -1,6 +1,7 @@
 package proyecto3;
 
 import proyecto3.interfaz.PantallaInicio.inicio;
+import proyecto3.interfaz.Principal.pantallaP;
 /**
  * Clase Main principal que inicializa
  * todas las pantallas y el proyecto
@@ -12,8 +13,11 @@ public class Proyecto3 {
      */
     public static void main(String[] args) {
        
-        inicio inicio = new inicio();
-        inicio.setVisible(true);
+        pantallaP pp = new pantallaP();
+        pp.setVisible(true);
+        
+        //inicio inicio = new inicio();
+        //inicio.setVisible(true);
     }
     
 }
