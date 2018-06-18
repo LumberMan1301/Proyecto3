@@ -1,8 +1,6 @@
 package proyecto3.manejadorArchivos;
 
-import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Method;
 import java.util.Enumeration;
 import java.util.jar.Attributes;
 import java.util.jar.JarFile;
@@ -54,8 +52,7 @@ public class manejadorArchivos {
         } catch (IOException ex) {}
     }
     public static void llenarImports(){
-        String s = ";";
-        char c = s.charAt(0);
+        
         if (dependencias != null){
             imports = dependencias.split(",");
             for(int i = 0; i < imports.length ; i++){
@@ -63,15 +60,7 @@ public class manejadorArchivos {
             }
             }
         }
-    public static void buscarMetodos(){
-        for(int i = 0; i < clases.size(); i++){
-            File f = new File(String.valueOf(clases.get(i)));
-            Method[] metodos = f.getClass().getMethods();
-            for(Method method : metodos){
-                System.out.println(method.getName());
-            }
-        }
-    }
+    
     
     
     
