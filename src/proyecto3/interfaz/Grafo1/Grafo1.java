@@ -5,8 +5,10 @@
  */
 package proyecto3.interfaz.Grafo1;
 
+import com.sun.prism.j2d.J2DPipeline;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import javax.swing.JLabel;
 import proyecto3.EstructurasDeDatos.Lista.ListaSimple;
 import proyecto3.EstructurasDeDatos.grafos.Arboles;
 import proyecto3.EstructurasDeDatos.grafos.Pintar;
@@ -31,6 +33,7 @@ public class Grafo1 extends javax.swing.JFrame {
         this.setLocationByPlatform(true);
         this.setLocationRelativeTo(this);
         initComponents();
+        jLabel2.setLocation(100, 120);
     }
     
     private int tope=0;// lleva el # de nodos creado 
@@ -66,6 +69,7 @@ public class Grafo1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
@@ -75,15 +79,23 @@ public class Grafo1 extends javax.swing.JFrame {
 
         jPanel1.setForeground(new java.awt.Color(255, 0, 102));
 
+        jLabel2.setText("jLabel2");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel2)
+                .addContainerGap(606, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 604, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel2)
+                .addContainerGap(557, Short.MAX_VALUE))
         );
 
         jTextArea1.setColumns(20);
@@ -108,40 +120,35 @@ public class Grafo1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jScrollPane1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(57, 57, 57)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 49, Short.MAX_VALUE)))
-                        .addGap(18, 18, 18))
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+                .addGap(25, 25, 25)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
+                        .addGap(42, 42, 42)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47))))
+                        .addGap(46, 46, 46))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
 
         pack();
@@ -151,36 +158,44 @@ public class Grafo1 extends javax.swing.JFrame {
         jPanel1.paint(jPanel1.getGraphics()); 
      
         int Matriz[][]=
-                {{0,1,0,0,0,0,0,0,0},
-                {0,0,0,1,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,1,0,0},
-                {0,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,1,0,0,0},
-                {0,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0}};
+                {{0,0,0,1,1,0,0,1},
+                {0,0,1,0,0,0,0,0},
+                {0,1,0,1,1,0,0,0},
+                {1,0,1,0,0,0,0,0},
+                {1,0,1,0,0,1,0,0},
+                {0,0,0,0,1,0,1,1},
+                {0,0,0,0,0,1,0,0},
+                {1,0,0,0,0,1,0,0}
+                   };
         
-        int coordy = 100;
-        int coordx = 80;
+        int coordy = 35;
+        int coordx = 30;
         int i = 0;
-        while(coordy<540){
+        int l = 1;
+        while(l<7){
             if(i%2 == 0){
-                if(coordx == 560){
-                    coordx = 80;
-                    coordy += 110;
+                if(coordx == 550){
+                    coordx = 30;
+                    coordy += 120;
+                    l++;
                 }
-                coordX.add(coordx += 120);
-                coordY.add(coordy+30);
+                else{
+                    coordX.add(coordx);
+                    coordY.add(coordy+30);
+                    coordx += 130;
+                    
+                }
+                
             }
             else{
                 coordY.add(coordy-30);
             }
+            i++;
         }
         
-        int nom[]={0,1,2,3,4,5,6,7,30};          
+        int nom[]={0,1,2,3,4,5,6,7};          
         aristaMayor=600;       
-        for (int j = 0; j < 9; j++) {
+        for (int j = 0; j < 8; j++) {
             System.out.println((int)coordX.get(j));
             arboles.setCordeX(j, (int)coordX.get(j));
             
@@ -190,20 +205,23 @@ public class Grafo1 extends javax.swing.JFrame {
             arboles.setNombre(j, nom[j]);      
          
         }
-        for (int j = 0; j < 9; j++) {            
-            for (int k = 0; k < 9; k++) {
+        for (int j = 0; j < 8; j++) {            
+            for (int k = 0; k < 8; k++) {
                 arboles.setmAdyacencia(j,k, Matriz[j][k]);
                 }
         }        
-       tope=9;       
+       tope=8;     
         R_repaint(tope,arboles);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     public static javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
+
+   
 }
