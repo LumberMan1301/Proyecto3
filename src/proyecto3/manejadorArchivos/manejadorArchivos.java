@@ -57,9 +57,12 @@ public class manejadorArchivos {
             imports = dependencias.split(",");
             for(int i = 0; i < imports.length ; i++){
                 pantallaP.llenarCont2(imports[i]+"\n");
-            }
+                }
             }
         }
+    public void hacerMatriz(){
+        
+    }
     
     
     

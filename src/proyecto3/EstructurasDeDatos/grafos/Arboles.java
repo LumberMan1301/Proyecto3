@@ -1,5 +1,5 @@
 
-package proyecto3.grafos;
+package proyecto3.EstructurasDeDatos.grafos;
 /**
  * Permite obtener y editar los valores y estructuras necesarias
  * para la creacion de grafos, como su matriz y los puntos 

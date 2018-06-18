@@ -1,5 +1,5 @@
 
-package proyecto3.grafos;
+package proyecto3.EstructurasDeDatos.grafos;
 /**
  * Conexion entre cada nodo o arista del grafo
  * permite determinar la direccion del grafo dirigido
