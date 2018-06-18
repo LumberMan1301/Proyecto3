@@ -49,7 +49,7 @@ public class Pintar {
  * en el nodo de destino mediante un angulo que separa dos lineas mas
  * pequeñas formando una flecha
  */
-  public static void pintarLinea(Graphics g, int x1,int y1,int x2,int y2,int tam){
+  public static void pintarLinea(Graphics g, int x1,int y1,int x2,int y2){
         int xAux = 0; int yAux = 0; 
         ((Graphics2D)g).setRenderingHint(RenderingHints.KEY_ANTIALIASING,  RenderingHints.VALUE_ANTIALIAS_ON);
         BasicStroke stroke = new BasicStroke(2);
@@ -125,7 +125,6 @@ public class Pintar {
  * seleccionando ese nodo en especifico y hacer una accion en el
  */
    public static void clickSobreNodo(Graphics g,int x,int y,String n,Color co){
-        //g.drawOval(x, y-10, 20, 20);
         ((Graphics2D)g).setColor(co);
         ((Graphics2D)g).setStroke(new BasicStroke(4));//leda el grosor al circulo        
         ((Graphics2D)g).fillOval(x, y, 15, 15);        
