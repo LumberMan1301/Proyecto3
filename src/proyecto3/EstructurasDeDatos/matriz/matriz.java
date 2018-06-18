@@ -41,12 +41,20 @@ public class matriz extends ListaSimple{
         for(int b=0; b<t; b++){
             j.add(0);
         }
-        j.print();
         return j;
     }
     
     public static void main(String[] args) {
         matriz m = new matriz(3);
+        m.set(0, 0, 3);
+    }
+    
+    public void set(int i, int j, int valor){
+        ListaSimple aux = (ListaSimple) this.get(i);
+        aux.print();
+       
+            
+        
     }
     
     
