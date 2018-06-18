@@ -67,7 +67,9 @@ public class manejadorArchivos {
         for(int i = 0; i < clases.size(); i++){
             File f = new File(String.valueOf(clases.get(i)));
             Method[] metodos = f.getClass().getMethods();
-            System.out.println(metodos);
+            for(Method method : metodos){
+                System.out.println(method.getName());
+            }
         }
     }
     
