@@ -48,7 +48,7 @@ public class pantallaP extends javax.swing.JFrame {
         this.setLocationRelativeTo(this);
     }
     
-    Pintar pintar =new Pintar();
+    Pintar pintar = new Pintar();
     Arboles arboles = new Arboles();    
     public static void R_repaint(int tope, Arboles arboles){//pinta lo q esta antes en el panel 
         for (int j = 0; j < tope; j++) {
@@ -353,16 +353,6 @@ public class pantallaP extends javax.swing.JFrame {
                 {0,0,0,0,0,1,0,0,0},
                 {0,0,0,0,0,0,0,0,0},
                 {0,0,0,0,0,0,0,0,0}};
-        int coe[][]=  
-                {{0,0,0,46,216,0,0,578,0}, 
-                {30,0,59,0,0,0,0,0,0}, 
-                {0,59,0,89,174,0,0,0,0},
-                {46,0,89,0,0,0,0,0,0},
-                {216,0,174,0,0,471,1,0,0} ,
-                {0,0,0,0,471,0,194,398,0},  
-                {0,0,0,0,0,194,0,0,0}, 
-                {578,0,0,0,0,398,0,0,0},
-                {0,0,0,0,0,0,0,0,0},};
         
         int coordy = 100;
         int coordx = 80;
@@ -392,8 +382,7 @@ public class pantallaP extends javax.swing.JFrame {
         for (int j = 0; j < 9; j++) {            
             for (int k = 0; k < 9; k++) {
                 arboles.setmAdyacencia(j,k, Matriz[j][k]);
-                arboles.setmCoeficiente(j, k, coe[j][k]); 
-            }
+                }
         }        
        tope=9;       
         R_repaint(tope,arboles);
