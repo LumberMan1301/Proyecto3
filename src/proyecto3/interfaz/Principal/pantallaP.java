@@ -318,7 +318,7 @@ public class pantallaP extends javax.swing.JFrame {
         
         manejadorArchivos.leerArchivo(ruta); 
         manejadorArchivos.llenarImports();
-        manejadorArchivos.buscarMetodos();
+        
             
         }
     }//GEN-LAST:event_abrirBuscadorArchivos
