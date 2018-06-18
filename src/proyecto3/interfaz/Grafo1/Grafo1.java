@@ -10,8 +10,8 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JLabel;
 import proyecto3.EstructurasDeDatos.Lista.ListaSimple;
-import proyecto3.grafos.Arboles;
-import proyecto3.grafos.Pintar;
+import proyecto3.EstructurasDeDatos.grafos.Arboles;
+import proyecto3.EstructurasDeDatos.grafos.Pintar;
 
 /**
  *
