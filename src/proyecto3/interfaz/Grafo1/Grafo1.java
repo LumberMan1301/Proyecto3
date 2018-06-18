@@ -48,7 +48,7 @@ public class Grafo1 extends javax.swing.JFrame {
         for (int j = 0; j < tope; j++) {
             for (int k = 0; k < tope; k++) {
                 if(arboles.getmAdyacencia(j, k) == 1)
-                     Pintar.pintarLinea(jPanel1.getGraphics(),arboles.getCordeX(j),arboles.getCordeY(j), arboles.getCordeX(k), arboles.getCordeY(k),arboles.getmCoeficiente(j, k));
+                     Pintar.pintarLinea(jPanel1.getGraphics(),arboles.getCordeX(j),arboles.getCordeY(j), arboles.getCordeX(k), arboles.getCordeY(k));
             }
         }
         for (int j = 0; j < tope; j++) 
@@ -101,7 +101,7 @@ public class Grafo1 extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 51, 102));
-        jLabel1.setText("Dependencias del JAR");
+        jLabel1.setText("Información del grafo");
         jLabel1.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -149,9 +149,7 @@ public class Grafo1 extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jPanel1.paint(jPanel1.getGraphics()); 
-         n=0;
-         id=-1;
-         id2=-1;
+     
         int Matriz[][]=
                 {{0,1,0,0,0,0,0,0,0},
                 {0,0,0,1,0,0,0,0,0},
@@ -165,26 +163,30 @@ public class Grafo1 extends javax.swing.JFrame {
         
         int coordy = 100;
         int coordx = 80;
-        
+        int i = 0;
         while(coordy<540){
-            if(coordx == 560){
-                coordx = 80;
-                coordy += 110;
+            if(i%2 == 0){
+                if(coordx == 560){
+                    coordx = 80;
+                    coordy += 110;
+                }
+                coordX.add(coordx += 120);
+                coordY.add(coordy+30);
             }
-            coordX.add(coordx += 120);
-            coordY.add(coordy);
+            else{
+                coordY.add(coordy-30);
+            }
         }
-        //int xx1[]={coordx,coordx += 70,coordx += 70,coordx += 70,coordx += 70,coordx += 70,coordx += 70,coordx += 70,coordx += 70};
-        //int yy1[]={coordm,74,165,113,233,300,368,177,200};
+        
         int nom[]={0,1,2,3,4,5,6,7,30};          
         aristaMayor=600;       
         for (int j = 0; j < 9; j++) {
             System.out.println((int)coordX.get(j));
             arboles.setCordeX(j, (int)coordX.get(j));
-            //arboles.setCordeX(j, xx1[j]);
+            
             
             arboles.setCordeY(j, (int)coordY.get(j));
-            //arboles.setCordeY(j, yy1[j]);
+            
             arboles.setNombre(j, nom[j]);      
          
         }

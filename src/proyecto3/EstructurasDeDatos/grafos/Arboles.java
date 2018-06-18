@@ -6,7 +6,7 @@ package proyecto3.EstructurasDeDatos.grafos;
  * donde se ubica el grafo
  */
 public class Arboles {
-   private int mCoeficiente[][] = new int [51][51];
+   
    private int mAdyacencia [][] = new int [51][51];
    private int cordeX [] = new int [51];
    private int cordeY [] = new int [51];
@@ -19,10 +19,7 @@ public class Arboles {
         
     }
 
-    public int getmCoeficiente(int i, int j ) {
-        return mCoeficiente[i][j];
-    }
-
+    
     public int getmAdyacencia(int i,int j) {
         return mAdyacencia[i][j];
     }
@@ -43,10 +40,7 @@ public class Arboles {
         return enArbol[i];
     }
 
-    public void setmCoeficiente(int i,int j ,int mCoeficiente) {
-        this.mCoeficiente[i][j] = mCoeficiente;
-    }
-
+    
     public void setmAdyacencia(int i,int j ,int mAdyacencia) {
         this.mAdyacencia[i][j] = mAdyacencia;
     }
