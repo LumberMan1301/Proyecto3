@@ -11,11 +11,11 @@ import proyecto3.EstructurasDeDatos.Lista.ListaSimple;
  *
  * @author 13mariano
  */
-public class matriz extends ListaSimple{
+public class Matriz extends ListaSimple{
     
     private int tamanio;
     
-    public matriz(int tamanio){
+    public Matriz(int tamanio){
         this.tamanio = tamanio;
         System.out.println("Manda a llamar a llenarMatriz"+tamanio);
         this.llenarMatriz(tamanio);
@@ -39,16 +39,24 @@ public class matriz extends ListaSimple{
     
     
     public static void main(String[] args) {
-        matriz m = new matriz(10);
+        Matriz m = new Matriz(10);
         m.imprimirM();
         m.set(1, 1, 45);
         m.imprimirM();
+        m.get(1, 1);
         
     }
     
     public void set(int i, int j, int valor){
         ListaSimple aux = (ListaSimple) this.get(i);
         aux.getNode(j).setData(valor);
+    }
+    
+    public Integer get(int i, int j){
+        ListaSimple aux = (ListaSimple) this.get(i);
+        int valor = (int)aux.get(j);
+        System.out.println(valor);
+        return valor;
     }
     
     public void imprimirM(){
