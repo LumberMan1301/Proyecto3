@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/maria/Desktop/Proyecto3/src/proyecto3/interfaz/Principal/pantallaP.java</file>
             <file>file:/C:/Users/maria/Desktop/Proyecto3/src/proyecto3/interfaz/PantallaInicio/inicio.java</file>
             <file>file:/C:/Users/maria/Desktop/Proyecto3/src/proyecto3/EstructurasDeDatos/matriz/matriz.java</file>
@@ -10,6 +11,10 @@
             <file>file:/C:/Users/maria/Desktop/Proyecto3/src/proyecto3/EstructurasDeDatos/Lista/ListaSimple.java</file>
             <file>file:/C:/Users/maria/Desktop/Proyecto3/src/proyecto3/EstructurasDeDatos/Lista/NodeLista.java</file>
             <file>file:/C:/Users/maria/Desktop/Proyecto3/src/proyecto3/Proyecto3.java</file>
+=======
+            <file>file:/C:/Users/karla/Documents/NetBeansProjects/Proyecto3/src/proyecto3/interfaz/Principal/pantallaP.java</file>
+            <file>file:/C:/Users/karla/Documents/NetBeansProjects/Proyecto3/src/proyecto3/interfaz/Grafo1/Grafo1.java</file>
+>>>>>>> 6ad7a9d01c05256d7262165d4cbb7b597f8d8a8f
         </group>
     </open-files>
 </project-private>

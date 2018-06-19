@@ -33,14 +33,11 @@ public class Grafo1 extends javax.swing.JFrame {
         this.setLocationByPlatform(true);
         this.setLocationRelativeTo(this);
         initComponents();
-        jLabel2.setLocation(100, 120);
+        
     }
     
     private int tope=0;// lleva el # de nodos creado 
-    private int nodoFin;
-    private int permanente;
     int n=0,nn=0,id,id2;// permite controlar que se halla dando click sobre un nodo
-    private int aristaMayor;
     private static ListaSimple<Integer> coordX;
     private ListaSimple coordY;
     private ListaSimple nombres;
@@ -69,7 +66,6 @@ public class Grafo1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
@@ -79,23 +75,15 @@ public class Grafo1 extends javax.swing.JFrame {
 
         jPanel1.setForeground(new java.awt.Color(255, 0, 102));
 
-        jLabel2.setText("jLabel2");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel2)
-                .addContainerGap(606, Short.MAX_VALUE))
+            .addGap(0, 667, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel2)
-                .addContainerGap(557, Short.MAX_VALUE))
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         jTextArea1.setColumns(20);
@@ -158,45 +146,54 @@ public class Grafo1 extends javax.swing.JFrame {
         jPanel1.paint(jPanel1.getGraphics()); 
      
         int Matriz[][]=
-                {{0,0,0,1,1,0,0,1},
-                {0,0,1,0,0,0,0,0},
-                {0,1,0,1,1,0,0,0},
-                {1,0,1,0,0,0,0,0},
-                {1,0,1,0,0,1,0,0},
-                {0,0,0,0,1,0,1,1},
-                {0,0,0,0,0,1,0,0},
-                {1,0,0,0,0,1,0,0}
+                {{0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {0,0,1,0,0,0,0,0,0,0,0,0,0,0},
+                {0,1,0,0,0,0,0,0,0,0,0,0,0,0},
+                {1,0,1,0,0,0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0,1,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,1,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0}
                    };
         
-        int coordy = 35;
-        int coordx = 30;
+        int coordy = 65;
+        int coordx = 70;
         int i = 0;
         int l = 1;
+        int m = 0;
         while(l<7){
             if(i%2 == 0){
-                if(coordx == 550){
-                    coordx = 30;
-                    coordy += 120;
+                if(m == 5){
+                    coordx = 70;
+                    coordy += 210;
                     l++;
-                }
-                else{
+                    m = 0;
+                }else{
                     coordX.add(coordx);
-                    coordY.add(coordy+30);
+                    coordY.add(coordy+50);
                     coordx += 130;
-                    
-                }
-                
+                    m += 1;
+                }    
             }
             else{
-                coordY.add(coordy-30);
+                coordY.add(coordy-50);    
             }
-            i++;
+            i++;         
         }
         
-        int nom[]={0,1,2,3,4,5,6,7};          
-        aristaMayor=600;       
-        for (int j = 0; j < 8; j++) {
-            System.out.println((int)coordX.get(j));
+        int nom[]={0,1,2,3,4,5,6,7,10,30,50,70,100,200};          
+               
+        for (int j = 0; j < 14; j++) {
+            coordX.print();
+            coordY.print();
+            //System.out.println((int)coordY.get(j));
+            System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
             arboles.setCordeX(j, (int)coordX.get(j));
             
             
@@ -205,19 +202,18 @@ public class Grafo1 extends javax.swing.JFrame {
             arboles.setNombre(j, nom[j]);      
          
         }
-        for (int j = 0; j < 8; j++) {            
-            for (int k = 0; k < 8; k++) {
+        for (int j = 0; j < 14; j++) {            
+            for (int k = 0; k < 14; k++) {
                 arboles.setmAdyacencia(j,k, Matriz[j][k]);
                 }
         }        
-       tope=8;     
+       tope=14;     
         R_repaint(tope,arboles);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     public static javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;

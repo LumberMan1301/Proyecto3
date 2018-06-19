@@ -31,6 +31,8 @@ public class pantallaP extends javax.swing.JFrame {
      */
     public pantallaP() {
         initComponents();
+        coordX = new ListaSimple();
+        coordY = new ListaSimple();
         Toolkit t = Toolkit.getDefaultToolkit();
         Dimension d = t.getScreenSize();
         int ScreenWidth = d.width;
@@ -39,6 +41,28 @@ public class pantallaP extends javax.swing.JFrame {
         this.setLocationByPlatform(true);
         this.setLocationRelativeTo(this);
     }
+    private int tope=0;// lleva el # de nodos creado 
+    private int nodoFin;
+    private int permanente;
+    int n=0,nn=0,id,id2;// permite controlar que se halla dando click sobre un nodo
+    private int aristaMayor;
+    private static ListaSimple<Integer> coordX;
+    private ListaSimple coordY;
+    private ListaSimple nombres;
+    
+    Pintar pintar = new Pintar();
+    Arboles arboles = new Arboles();    
+    public static void R_repaint(int tope, Arboles arboles){//pinta lo q esta antes en el panel 
+        for (int j = 0; j < tope; j++) {
+            for (int k = 0; k < tope; k++) {
+                if(arboles.getmAdyacencia(j, k) == 1)
+                     Pintar.pintarLinea(jPanel2.getGraphics(),arboles.getCordeX(j),arboles.getCordeY(j), arboles.getCordeX(k), arboles.getCordeY(k));
+            }
+        }
+        for (int j = 0; j < tope; j++) 
+            Pintar.pintarCirculo(jPanel2.getGraphics(), arboles.getCordeX(j),arboles.getCordeY(j),String.valueOf(arboles.getNombre(j)));
+                
+   }
     
     
 
@@ -65,6 +89,7 @@ public class pantallaP extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtRuta = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -75,6 +100,7 @@ public class pantallaP extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         ContJar2 = new javax.swing.JTextArea();
+        jPanel2 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         BtnAbrir = new javax.swing.JMenuItem();
@@ -125,6 +151,13 @@ public class pantallaP extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -140,7 +173,9 @@ public class pantallaP extends javax.swing.JFrame {
                 .addComponent(txtRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(jButton2)
-                .addGap(230, 230, 230))
+                .addGap(68, 68, 68)
+                .addComponent(jButton1)
+                .addGap(89, 89, 89))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,7 +185,8 @@ public class pantallaP extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
                         .addComponent(txtRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton2))
+                        .addComponent(jButton2)
+                        .addComponent(jButton1))
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1)
                         .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -217,6 +253,17 @@ public class pantallaP extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 711, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 594, Short.MAX_VALUE)
+        );
+
         jMenu2.setText("File");
 
         BtnAbrir.setText("Abrir");
@@ -248,14 +295,20 @@ public class pantallaP extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         getAccessibleContext().setAccessibleName("JFramePrincipal");
@@ -296,11 +349,77 @@ public class pantallaP extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        //Grafo1 grafo1 = new Grafo1();
+        //grafo1.setVisible(true);
+        //grafo1.setLocationRelativeTo(pantallaP.this);
+        //pantallaP.this.dispose();
+        jPanel2.paint(jPanel1.getGraphics()); 
+     
+        int Matriz[][]=
+                {{0,0,0,1,1,0,0,0,0},
+                {0,1,1,0,0,0,0,0,0},
+                {0,1,1,1,1,0,0,0,0},
+                {1,0,1,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0},
+                {0,0,0,0,0,0,0,0,0},
+                {0,0,0,1,1,0,0,0,0}
+                   };
+        
+        int coordy = 35;
+        int coordx = 30;
+        int i = 0;
+        int l = 1;
+        while(l<7){
+            if(i%2 == 0){
+                if(coordx == 550){
+                    coordx = 30;
+                    coordy += 120;
+                    l++;
+                }
+                if(coordx< 550){
+                    coordX.add(coordx);
+                    coordY.add(coordy+30);
+                    coordx += 130;                  
+                }
+            }
+            else{
+                coordY.add(coordy-30);    
+            }
+            i++;   
+        }
+        
+        int nom[]={0,1,2,3,4,5,6,7,10};          
+        aristaMayor=600;       
+        for (int j = 0; j < 9; j++) {
+            coordX.print();
+            coordY.print();
+            //System.out.println((int)coordY.get(j));
+            System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+            arboles.setCordeX(j, (int)coordX.get(j));
+            
+            
+            arboles.setCordeY(j, (int)coordY.get(j));
+            
+            arboles.setNombre(j, nom[j]);      
+         
+        }
+        for (int j = 0; j < 9; j++) {            
+            for (int k = 0; k < 9; k++) {
+                arboles.setmAdyacencia(j,k, Matriz[j][k]);
+                }
+        }        
+       tope=9;     
+        R_repaint(tope,arboles);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Grafo1 grafo1 = new Grafo1();
         grafo1.setVisible(true);
         grafo1.setLocationRelativeTo(pantallaP.this);
         pantallaP.this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     
 
@@ -309,6 +428,7 @@ public class pantallaP extends javax.swing.JFrame {
     private static javax.swing.JTextArea ContJar;
     private static javax.swing.JTextArea ContJar1;
     private static javax.swing.JTextArea ContJar2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -321,6 +441,7 @@ public class pantallaP extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPanel jPanel1;
+    public static javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
