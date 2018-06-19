@@ -17,46 +17,48 @@ public class matriz extends ListaSimple{
     
     public matriz(int tamanio){
         this.tamanio = tamanio;
-        llenarMatriz(tamanio);
-    }
-    
-    public void llenarMatriz(int t){
-        llenarMatrizAux(t);
-    }
-    
-    private ListaSimple llenarMatrizAux(int t){
+        System.out.println("Manda a llamar a llenarMatriz"+tamanio);
+        this.llenarMatriz(tamanio);
         
-        ListaSimple i = new ListaSimple();
+    }
+    
+    private ListaSimple llenarMatriz(int t){
+        System.out.println("va a llenar la lista i");
+        
         for (int a = 0; a<t; a++){
-            ListaSimple j = new  ListaSimple();
-            i.add(j);
-            llenarJ((ListaSimple) i.get(a), t);
-            
+            ListaSimple<Integer> lista = new ListaSimple<>();
+            this.add(lista);
+            for(int b = 0; b<t;b++){
+                    lista.add(0);
+            }
         }
-        return i;
+        return this;
     }
     
     
-    private ListaSimple llenarJ(ListaSimple j, int t){
-        for(int b=0; b<t; b++){
-            j.add(0);
-        }
-        return j;
-    }
+    
     
     public static void main(String[] args) {
-        matriz m = new matriz(3);
-        m.set(0, 0, 3);
+        matriz m = new matriz(10);
+        m.imprimirM();
+        m.set(1, 1, 45);
+        m.imprimirM();
+        
     }
     
     public void set(int i, int j, int valor){
         ListaSimple aux = (ListaSimple) this.get(i);
-        aux.print();
-       
-            
-        
+        aux.getNode(j).setData(valor);
     }
     
+    public void imprimirM(){
+        for (int i = 0; i<this.size();i++){
+            ListaSimple aux = (ListaSimple) this.get(i);
+            aux.print();
+            
+        }
+        System.out.println("\n");
+    }
     
     
     
