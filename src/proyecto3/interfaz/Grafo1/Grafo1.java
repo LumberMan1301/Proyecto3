@@ -37,10 +37,7 @@ public class Grafo1 extends javax.swing.JFrame {
     }
     
     private int tope=0;// lleva el # de nodos creado 
-    private int nodoFin;
-    private int permanente;
     int n=0,nn=0,id,id2;// permite controlar que se halla dando click sobre un nodo
-    private int aristaMayor;
     private static ListaSimple<Integer> coordX;
     private ListaSimple coordY;
     private ListaSimple nombres;
@@ -151,7 +148,7 @@ public class Grafo1 extends javax.swing.JFrame {
         int Matriz[][]=
                 {{0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                 {0,0,1,0,0,0,0,0,0,0,0,0,0,0},
-                {0,1,0,0,1,0,0,0,0,0,0,0,0,0},
+                {0,1,0,0,0,0,0,0,0,0,0,0,0,0},
                 {1,0,1,0,0,0,0,0,0,0,0,0,0,0},
                 {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
                 {0,0,0,0,0,0,0,0,0,1,0,0,0,0},
@@ -178,7 +175,6 @@ public class Grafo1 extends javax.swing.JFrame {
                     l++;
                     m = 0;
                 }else{
-                
                     coordX.add(coordx);
                     coordY.add(coordy+50);
                     coordx += 130;
@@ -188,8 +184,7 @@ public class Grafo1 extends javax.swing.JFrame {
             else{
                 coordY.add(coordy-50);    
             }
-            i++;       
-            
+            i++;         
         }
         
         int nom[]={0,1,2,3,4,5,6,7,10,30,50,70,100,200};          

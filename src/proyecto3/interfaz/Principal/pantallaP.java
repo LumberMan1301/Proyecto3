@@ -381,16 +381,13 @@ public class pantallaP extends javax.swing.JFrame {
                 if(coordx< 550){
                     coordX.add(coordx);
                     coordY.add(coordy+30);
-                    coordx += 130;
-                    
+                    coordx += 130;                  
                 }
-    
             }
             else{
                 coordY.add(coordy-30);    
             }
-            i++;
-            
+            i++;   
         }
         
         int nom[]={0,1,2,3,4,5,6,7,10};          
