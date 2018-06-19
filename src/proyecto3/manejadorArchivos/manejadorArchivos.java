@@ -8,6 +8,7 @@ import java.util.jar.Manifest;
 
 import java.util.zip.ZipEntry;
 import proyecto3.EstructurasDeDatos.Lista.ListaSimple;
+import proyecto3.EstructurasDeDatos.matriz.Matriz;
 import proyecto3.interfaz.Principal.pantallaP;
 
 /**
@@ -18,6 +19,18 @@ public class manejadorArchivos {
     private static String dependencias;
     private static String[] imports;
     private static ListaSimple clases;
+    private static ListaSimple aux = new ListaSimple();
+    private static Matriz matriz; 
+    private static String nombre;
+
+    public static Matriz getMatriz() {
+        return matriz;
+    }
+
+    public static String getNombre() {
+        return nombre;
+    }
+    
     
     
     
@@ -32,7 +45,8 @@ public class manejadorArchivos {
     public static void leerArchivo(String ruta){
         clases = new ListaSimple();
         try {
-            JarFile jf = new JarFile(ruta);//ruta es el path del jar    
+            JarFile jf = new JarFile(ruta);//ruta es el path del jar
+            jf.getName();
             Manifest manifest = jf.getManifest();
             Attributes attributes = manifest.getMainAttributes();
             
@@ -60,20 +74,26 @@ public class manejadorArchivos {
         
         if (dependencias != null){
             imports = dependencias.split(",");
+            
             for(int i = 0; i < imports.length ; i++){
+                
+                if(imports[i].length()!=3){
+                pantallaP.llenarCont2(imports[i]+"\n");
+                aux.add(imports[i]);
             }
         }
-        for (int i= 0; i<imports.length;i++){
-            int cont = 0;
-            if(imports[i].length()!=3){
-                pantallaP.llenarCont2(imports[i]+"\n");
-                
         }
-        }
+        aux.print();
+        hacerMatriz();
+        
         
     }
-    public void hacerMatriz(){
-        
+    public static void hacerMatriz(){
+        matriz = new Matriz(aux.size()+1);
+        for(int i = 1; i< matriz.size(); i++){
+            matriz.set(0, i, 1);
+        }
+        matriz.imprimirM();
     }
     
     

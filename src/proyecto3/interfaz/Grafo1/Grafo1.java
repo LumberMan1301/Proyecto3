@@ -3,9 +3,10 @@ package proyecto3.interfaz.Grafo1;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import proyecto3.EstructurasDeDatos.Lista.ListaSimple;
-//import proyecto3.EstructurasDeDatos.grafos.Arboles;
 import proyecto3.EstructurasDeDatos.grafos.Pintar;
 import proyecto3.EstructurasDeDatos.grafos.Grafo;
+import proyecto3.EstructurasDeDatos.matriz.Matriz;
+import proyecto3.manejadorArchivos.manejadorArchivos;
 
 /**
  * Clase para visualizar el grafo de las dependencias,
@@ -32,7 +33,7 @@ public class Grafo1 extends javax.swing.JFrame {
     }
     private ListaSimple<Integer> coordX = new ListaSimple<Integer>();
     private ListaSimple<Integer> coordY = new ListaSimple<Integer>();
-    private int tope=0;// lleva el # de nodos creado 
+    private int tope=manejadorArchivos.getMatriz().size();// lleva el # de nodos creado 
     int n=0,nn=0,id,id2;// permite controlar que se halla dando click sobre un nodo
     
     
@@ -67,7 +68,7 @@ public class Grafo1 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        NumDepe = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -86,9 +87,9 @@ public class Grafo1 extends javax.swing.JFrame {
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        NumDepe.setColumns(20);
+        NumDepe.setRows(5);
+        jScrollPane1.setViewportView(NumDepe);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(0, 0, 102));
@@ -149,22 +150,7 @@ public class Grafo1 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jPanel1.paint(jPanel1.getGraphics()); 
      
-        int Matriz[][]=
-                {{0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                {0,0,1,0,0,0,0,0,0,0,0,0,0,0},
-                {0,1,0,0,0,0,0,0,0,0,0,0,0,0},
-                {1,0,1,0,0,0,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0,1,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,1,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0}
-                   };
+        Matriz matriz = manejadorArchivos.getMatriz();
         
         int coordy = 65;
         int coordx = 70;
@@ -193,26 +179,33 @@ public class Grafo1 extends javax.swing.JFrame {
             i++;         
         }
         
-        int nom[]={0,1,2,3,4,5,6,7,10,30,50,70,100,200};          
-        for(int j = 0; j < 14; j ++){
-            grafo.nombre.add(nom[j]);
+         
+        for(int j = 0; j < tope; j ++){
+            grafo.nombre.add(j);
         }
-        for (int j = 0; j < 14; j++) {            
-            for (int k = 0; k < 14; k++) {
-                grafo.setmAdyacencia(j,k, Matriz[j][k]);
+        for (int j = 0; j < tope; j++) {            
+            for (int k = 0; k < tope; k++) {
+                grafo.setmAdyacencia(j,k, matriz.get(j, k));
             }
         }        
-       tope=14;     
+            
        R_repaint(tope,grafo);
+       llenarNumDepe();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea NumDepe;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     public static javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 
+    
+    public void llenarNumDepe(){
+        
+            NumDepe.append("0: "+manejadorArchivos.getNombre()+"\n");
+        
+    }
    
 }
