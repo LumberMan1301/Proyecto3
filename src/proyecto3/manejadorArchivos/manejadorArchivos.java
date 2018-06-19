@@ -18,16 +18,7 @@ public class manejadorArchivos {
     private static String dependencias;
     private static String[] imports;
     private static ListaSimple clases;
-<<<<<<< HEAD
- 
-=======
-    
-    
-    
-   
-    
-    
->>>>>>> b5364ca827c9396d75a6b6dfa67e22a58ee3095d
+
     /**
     * Permite leer el rchivo jar en la ruta escogida en
     * archivos, toma los atributos que se seleccionan para
