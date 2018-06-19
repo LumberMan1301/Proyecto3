@@ -17,14 +17,11 @@ public class Matriz extends ListaSimple{
     
     public Matriz(int tamanio){
         this.tamanio = tamanio;
-        System.out.println("Manda a llamar a llenarMatriz"+tamanio);
         this.llenarMatriz(tamanio);
         
     }
     
-    private ListaSimple llenarMatriz(int t){
-        System.out.println("va a llenar la lista i");
-        
+    private ListaSimple llenarMatriz(int t){ 
         for (int a = 0; a<t; a++){
             ListaSimple<Integer> lista = new ListaSimple<>();
             this.add(lista);
@@ -33,18 +30,6 @@ public class Matriz extends ListaSimple{
             }
         }
         return this;
-    }
-    
-    
-    
-    
-    public static void main(String[] args) {
-        Matriz m = new Matriz(10);
-        m.imprimirM();
-        m.set(1, 1, 45);
-        m.imprimirM();
-        m.get(1, 1);
-        
     }
     
     public void set(int i, int j, int valor){
@@ -62,8 +47,7 @@ public class Matriz extends ListaSimple{
     public void imprimirM(){
         for (int i = 0; i<this.size();i++){
             ListaSimple aux = (ListaSimple) this.get(i);
-            aux.print();
-            
+            aux.print();   
         }
         System.out.println("\n");
     }
