@@ -47,7 +47,7 @@ public class manejadorArchivos {
                     pantallaP.llenarCont1("file : " + entry.getName()+"\n");
                     clases.add(entry.getName());
                 }
-           }clases.print();
+           }
             jf.close();  
         } catch (IOException ex) {}
     }
