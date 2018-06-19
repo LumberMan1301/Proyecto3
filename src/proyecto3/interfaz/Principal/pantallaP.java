@@ -7,7 +7,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import proyecto3.manejadorArchivos.manejadorArchivos;
 import proyecto3.interfaz.Grafo1.Grafo1;
 /**
- * 
+ * Permite al usuario escoger el archivo jar, y visualiza
+ * cuales son las clases contenidas, las dependencias
+ * y un boton que redirige a una nueva pantalla para el grafo asociado
  */
 public class pantallaP extends javax.swing.JFrame {
     
@@ -264,7 +266,12 @@ public class pantallaP extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * Abre el explorador de archivos para visualizar
+     * los archivos solo de extension .jar
+     * @param evt 
+     */
     private void abrirBuscadorArchivos(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirBuscadorArchivos
             
         JFileChooser fc = new JFileChooser();

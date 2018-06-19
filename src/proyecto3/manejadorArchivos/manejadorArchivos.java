@@ -51,6 +51,10 @@ public class manejadorArchivos {
             jf.close();  
         } catch (IOException ex) {}
     }
+    /**
+     * Toma las dependencias del jar y las muestra
+     * en pantalla
+     */
     public static void llenarImports(){
         
         if (dependencias != null){

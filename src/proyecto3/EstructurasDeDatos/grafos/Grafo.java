@@ -1,16 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package proyecto3.EstructurasDeDatos.grafos;
 
 import proyecto3.EstructurasDeDatos.Lista.ListaSimple;
 import proyecto3.EstructurasDeDatos.matriz.Matriz;
-
 /**
- *
- * @author 13mariano
+ * Clase grafo que permite, a partir de una matriz, 
+ * tomar las coordenadas x y y para graficarlo
+ * y el nombre de cada elemento de la matriz
+ * para nombrar a los nodos
+ * @author karla
  */
 public class Grafo{
     

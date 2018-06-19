@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package proyecto3.interfaz.Grafo1;
 
 import java.awt.Dimension;
@@ -11,8 +6,12 @@ import proyecto3.EstructurasDeDatos.Lista.ListaSimple;
 //import proyecto3.EstructurasDeDatos.grafos.Arboles;
 import proyecto3.EstructurasDeDatos.grafos.Pintar;
 import proyecto3.EstructurasDeDatos.grafos.Grafo;
+
 /**
- *
+ * Clase para visualizar el grafo de las dependencias,
+ * muestra enumeradas las dependencias y el nombre del jar
+ * en una lista en pantalla para que en el grafo los nodos
+ * solo tenga los numeros que coinciden con los nombres
  * @author karla
  */
 public class Grafo1 extends javax.swing.JFrame {
@@ -39,6 +38,12 @@ public class Grafo1 extends javax.swing.JFrame {
     
     Pintar pintar = new Pintar();
     Grafo grafo = new Grafo(14);    
+    /**
+     * Pinta en pantalla los nodos, y las aristas que los unen
+     * @param tope para ver cuantos nodos se deben crear
+     * @param grafo para obtener las coordenadas de donde se van
+     * a graficar los nodos en pantalla
+     */
     public static void R_repaint(int tope, Grafo grafo){//pinta lo q esta antes en el panel 
         for (int j = 0; j < tope; j++) {
             for (int k = 0; k < tope; k++) {
