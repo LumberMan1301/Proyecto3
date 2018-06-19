@@ -20,6 +20,7 @@ public class manejadorArchivos {
     private static ListaSimple clases;
     
     
+    
    
     
     
@@ -56,12 +57,17 @@ public class manejadorArchivos {
         if (dependencias != null){
             imports = dependencias.split(",");
             for(int i = 0; i < imports.length ; i++){
-                //pantallaP.llenarCont2(imports[i]+"\n");
-                
-                System.out.println(imports[i]);
-            }
             }
         }
+        for (int i= 0; i<imports.length;i++){
+            int cont = 0;
+            if(imports[i].length()!=3){
+                pantallaP.llenarCont2(imports[i]+"\n");
+                
+        }
+        }
+        
+    }
     public void hacerMatriz(){
         
     }
