@@ -126,7 +126,7 @@ public class Pintar {
  */
    public static void clickSobreNodo(Graphics g,int x,int y,String n,Color co){
         ((Graphics2D)g).setColor(co);
-        ((Graphics2D)g).setStroke(new BasicStroke(4));//leda el grosor al circulo        
+        ((Graphics2D)g).setStroke(new BasicStroke(4));//le da el grosor al circulo        
         ((Graphics2D)g).fillOval(x, y, 15, 15);        
         ((Graphics2D)g).setColor(Color.BLACK);
         ((Graphics2D)g).drawOval(x, y, 15, 15);
