@@ -146,7 +146,13 @@ public class Grafo1 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * Toma la matriz generada a partir de las dependencias
+     * del jar seleccionado para determinar las coordenadas
+     * en x y y para pintarlo
+     * @param evt 
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jPanel1.paint(jPanel1.getGraphics()); 
      
@@ -164,8 +170,7 @@ public class Grafo1 extends javax.swing.JFrame {
                     coordy += 210;
                     l++;
                     m = 0;
-                }else{
-                    
+                }else{    
                     grafo.getCordeX().add(coordx);
                     grafo.getCordeY().add(coordy+50);
                     coordx += 130;
@@ -173,8 +178,7 @@ public class Grafo1 extends javax.swing.JFrame {
                 }    
             }
             else{
-                grafo.cordeY.add(coordy-50);
-                    
+                grafo.cordeY.add(coordy-50);        
             }
             i++;         
         }
@@ -201,7 +205,12 @@ public class Grafo1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
-    
+    /**
+     * Permite visualizar en pantalla el nombre de
+     * las dependencias y el jar enumeradas para los numeros
+     * que tienen los nodos en el grafo
+     * 
+     */
     public void llenarNumDepe(){
         
             NumDepe.append("0: "+manejadorArchivos.getNombre()+"\n");
