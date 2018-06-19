@@ -64,10 +64,8 @@ public class Pintar {
            yAux=((y2-y1)/2)+y1;
         if(y1>=y2)
             yAux=((y1-y2)/2)+y2;        
-        // ((Graphics2D)g).setColor(Color.black);
         Font fuente=new Font("Monospaced",Font.PLAIN, 12);
         g.setFont(fuente);
-      //((Graphics2D)g).drawString(String.valueOf(tam), xAux, yAux);
       
         Point punto1=null,punto2=null;
         
@@ -118,7 +116,6 @@ public class Pintar {
         ((Graphics2D)g).setStroke(stroke);
         g.setColor(color);
         g.drawLine(x1+30, y1+30, x2+30, y2+30);
-        //g.drawString(String.valueOf(tam), x1, y1);
   }
   /**
  * Pinta el nodo de un color diferente para indicar que se esta
