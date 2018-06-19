@@ -185,16 +185,5 @@ public class ListaSimple<T> { private NodeLista<T> head;
    * @param i1 primera posicion a intercambiar
    * @param i2 segunda posicion a intercambiar
    */
-  public void swap(int i1, int i2)
-  {
-    T i = get(i1);
-    T j = get(i2);
-    getNode(i1).setData(j);
-    getNode(i2).setData(i);
-  }
   
-  public void setDATA(T data, int i)
-  {
-    getNode(i).setData(data);
-  }
 }
