@@ -38,7 +38,7 @@ public class Grafo1 extends javax.swing.JFrame {
     
     
     Pintar pintar = new Pintar();
-    Grafo grafo = new Grafo(14);    
+    Grafo grafo = new Grafo(tope);    
     /**
      * Pinta en pantalla los nodos, y las aristas que los unen
      * @param tope para ver cuantos nodos se deben crear
@@ -205,6 +205,9 @@ public class Grafo1 extends javax.swing.JFrame {
     public void llenarNumDepe(){
         
             NumDepe.append("0: "+manejadorArchivos.getNombre()+"\n");
+            for (int i = 1; i < tope; i++){
+                NumDepe.append(String.valueOf(i)+": "+manejadorArchivos.getAux().get(i-1).toString()+"\n");
+            }
         
     }
    

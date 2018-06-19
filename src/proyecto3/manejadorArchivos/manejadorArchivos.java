@@ -31,8 +31,13 @@ public class manejadorArchivos {
     public static String getNombre() {
         return nombre;
     }
-    
 
+    public static ListaSimple getAux() {
+        return aux;
+    }
+    
+    
+    
     /**
     * Permite leer el rchivo jar en la ruta escogida en
     * archivos, toma los atributos que se seleccionan para
@@ -42,7 +47,7 @@ public class manejadorArchivos {
         clases = new ListaSimple();
         try {
             JarFile jf = new JarFile(ruta);//ruta es el path del jar
-            jf.getName();
+            nombre = jf.getClass().getName();
             Manifest manifest = jf.getManifest();
             Attributes attributes = manifest.getMainAttributes();
             

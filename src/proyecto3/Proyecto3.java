@@ -13,11 +13,8 @@ public class Proyecto3 {
      */
     public static void main(String[] args) {
        
-        pantallaP pp = new pantallaP();
-        pp.setVisible(true);
-        
-        //inicio inicio = new inicio();
-        //inicio.setVisible(true);
+        inicio inicio = new inicio();
+        inicio.setVisible(true);
     }
     
 }
