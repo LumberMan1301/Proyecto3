@@ -5,14 +5,12 @@
  */
 package proyecto3.interfaz.Grafo1;
 
-import com.sun.prism.j2d.J2DPipeline;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import javax.swing.JLabel;
 import proyecto3.EstructurasDeDatos.Lista.ListaSimple;
-import proyecto3.EstructurasDeDatos.grafos.Arboles;
+//import proyecto3.EstructurasDeDatos.grafos.Arboles;
 import proyecto3.EstructurasDeDatos.grafos.Pintar;
-
+import proyecto3.EstructurasDeDatos.grafos.Grafo;
 /**
  *
  * @author karla
@@ -23,8 +21,6 @@ public class Grafo1 extends javax.swing.JFrame {
      * Creates new form Grafo1
      */
     public Grafo1() {
-        coordX = new ListaSimple();
-        coordY = new ListaSimple();
         Toolkit t = Toolkit.getDefaultToolkit();
         Dimension d = t.getScreenSize();
         int ScreenWidth = d.width;
@@ -38,21 +34,19 @@ public class Grafo1 extends javax.swing.JFrame {
     
     private int tope=0;// lleva el # de nodos creado 
     int n=0,nn=0,id,id2;// permite controlar que se halla dando click sobre un nodo
-    private static ListaSimple<Integer> coordX;
-    private ListaSimple coordY;
-    private ListaSimple nombres;
+    
     
     Pintar pintar = new Pintar();
-    Arboles arboles = new Arboles();    
-    public static void R_repaint(int tope, Arboles arboles){//pinta lo q esta antes en el panel 
+    Grafo grafo = new Grafo(14);    
+    public static void R_repaint(int tope, Grafo grafo){//pinta lo q esta antes en el panel 
         for (int j = 0; j < tope; j++) {
             for (int k = 0; k < tope; k++) {
-                if(arboles.getmAdyacencia(j, k) == 1)
-                     Pintar.pintarLinea(jPanel1.getGraphics(),arboles.getCordeX(j),arboles.getCordeY(j), arboles.getCordeX(k), arboles.getCordeY(k));
+                if(grafo.getmAdyacencia(j, k) == 1)
+                     Pintar.pintarLinea(jPanel1.getGraphics(),grafo.getCordeX(j),grafo.getCordeY(j), grafo.getCordeX(k), grafo.getCordeY(k));
             }
         }
         for (int j = 0; j < tope; j++) 
-            Pintar.pintarCirculo(jPanel1.getGraphics(), arboles.getCordeX(j),arboles.getCordeY(j),String.valueOf(arboles.getNombre(j)));
+            Pintar.pintarCirculo(jPanel1.getGraphics(), grafo.getCordeX(j),grafo.getCordeY(j),String.valueOf(grafo.getNombre(j)));
                 
    }
 
@@ -175,14 +169,15 @@ public class Grafo1 extends javax.swing.JFrame {
                     l++;
                     m = 0;
                 }else{
-                    coordX.add(coordx);
-                    coordY.add(coordy+50);
+                    grafo.getCordeX().add(coordx);
+                    grafo.getCordeY().add(coordy+50);
                     coordx += 130;
                     m += 1;
                 }    
             }
             else{
-                coordY.add(coordy-50);    
+                grafo.getCordeY().add(coordy-50);
+                    
             }
             i++;         
         }
@@ -190,25 +185,24 @@ public class Grafo1 extends javax.swing.JFrame {
         int nom[]={0,1,2,3,4,5,6,7,10,30,50,70,100,200};          
                
         for (int j = 0; j < 14; j++) {
-            coordX.print();
-            coordY.print();
+            grafo.getCordeX().print();
+            grafo.getCordeY().print();
             //System.out.println((int)coordY.get(j));
             System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-            arboles.setCordeX(j, (int)coordX.get(j));
+            grafo.setCordeX(j, (int)grafo.getCordeX(j));
             
+            grafo.setCordeY(j, (int)grafo.getCordeY(j));
             
-            arboles.setCordeY(j, (int)coordY.get(j));
-            
-            arboles.setNombre(j, nom[j]);      
+            grafo.setNombre(j, nom[j]);      
          
         }
         for (int j = 0; j < 14; j++) {            
             for (int k = 0; k < 14; k++) {
-                arboles.setmAdyacencia(j,k, Matriz[j][k]);
+                grafo.setmAdyacencia(j,k, Matriz[j][k]);
                 }
         }        
        tope=14;     
-        R_repaint(tope,arboles);
+        R_repaint(tope,grafo);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
