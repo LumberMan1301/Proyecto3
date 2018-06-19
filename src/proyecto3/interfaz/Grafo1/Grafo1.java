@@ -31,7 +31,8 @@ public class Grafo1 extends javax.swing.JFrame {
         initComponents();
         
     }
-    
+    private ListaSimple<Integer> coordX = new ListaSimple<Integer>();
+    private ListaSimple<Integer> coordY = new ListaSimple<Integer>();
     private int tope=0;// lleva el # de nodos creado 
     int n=0,nn=0,id,id2;// permite controlar que se halla dando click sobre un nodo
     
@@ -169,6 +170,7 @@ public class Grafo1 extends javax.swing.JFrame {
                     l++;
                     m = 0;
                 }else{
+                    
                     grafo.getCordeX().add(coordx);
                     grafo.getCordeY().add(coordy+50);
                     coordx += 130;
@@ -176,28 +178,20 @@ public class Grafo1 extends javax.swing.JFrame {
                 }    
             }
             else{
-                grafo.getCordeY().add(coordy-50);
+                grafo.cordeY.add(coordy-50);
                     
             }
             i++;         
         }
         
         int nom[]={0,1,2,3,4,5,6,7,10,30,50,70,100,200};          
-               
-        for (int j = 0; j < 14; j++) {
-            grafo.getCordeX().print();
-            grafo.getCordeY().print();
-            //System.out.println((int)coordY.get(j));
-            System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-            grafo.setCordeX(j, (int)grafo.getCordeX(j));
-            
-            grafo.setCordeY(j, (int)grafo.getCordeY(j));
-            
-            grafo.setNombre(j, nom[j]);      
-         
+        for(int j = 0; j < 14; j ++){
+            grafo.nombre.add(nom[j]);
         }
         for (int j = 0; j < 14; j++) {            
             for (int k = 0; k < 14; k++) {
+                grafo.cordeX.print();
+                grafo.cordeY.print();
                 grafo.setmAdyacencia(j,k, Matriz[j][k]);
                 }
         }        

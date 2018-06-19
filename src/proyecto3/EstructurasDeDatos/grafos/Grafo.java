@@ -12,7 +12,7 @@ import proyecto3.EstructurasDeDatos.matriz.Matriz;
  *
  * @author 13mariano
  */
-public class Grafo {
+public class Grafo{
     
     
     public Matriz matriz;
@@ -27,7 +27,7 @@ public class Grafo {
     }
     
     public int getmAdyacencia(int i, int j){
-        return this.getmAdyacencia(i, j);
+        return this.matriz.get(i, j);
     }
     
     public int getCordeX(int i){
@@ -43,7 +43,7 @@ public class Grafo {
     }
     
     public void setmAdyacencia(int i, int j, int valor){
-        this.setmAdyacencia(i, j, valor);
+        this.matriz.set(i, j, valor);
         
     }
     
