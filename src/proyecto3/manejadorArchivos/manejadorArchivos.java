@@ -81,9 +81,12 @@ public class manejadorArchivos {
         }
         aux.print();
         hacerMatriz();
-        
-        
+   
     }
+    /**
+     * Llena la matrz de 1 por cada dependencia que tiene
+     * menos a si misma en la matriz
+     */
     public static void hacerMatriz(){
         matriz = new Matriz(aux.size()+1);
         for(int i = 1; i< matriz.size(); i++){
