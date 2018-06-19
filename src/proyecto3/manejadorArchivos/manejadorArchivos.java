@@ -19,7 +19,7 @@ public class manejadorArchivos {
     private static String dependencias;
     private static String[] imports;
     private static ListaSimple clases;
-<<<<<<< HEAD
+
     private static ListaSimple aux = new ListaSimple();
     private static Matriz matriz; 
     private static String nombre;
@@ -32,15 +32,7 @@ public class manejadorArchivos {
         return nombre;
     }
     
-    
-    
-    
-   
-    
-    
-=======
 
->>>>>>> 7463464d977cce11a5959811f3dd1233f082b5b6
     /**
     * Permite leer el rchivo jar en la ruta escogida en
     * archivos, toma los atributos que se seleccionan para
